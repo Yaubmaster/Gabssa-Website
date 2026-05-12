@@ -348,7 +348,7 @@ function HeroPhotoCarousel() {
 function Hero({ t }) {
   const ref = useReveal();
   return (
-    <section id="top" style={{ position: 'relative', paddingTop: 110, paddingBottom: 56, overflow: 'hidden' }}>
+    <section id="top" style={{ position: 'relative', paddingTop: 96, paddingBottom: 56, overflow: 'hidden' }}>
       <div className="mesh-hero"><div className="blob"></div></div>
       <div className="bg-grid" style={{ position: 'absolute', inset: 0, opacity: 0.45, zIndex: 1, maskImage: 'radial-gradient(ellipse at 50% 0%, #000 30%, transparent 75%)', WebkitMaskImage: 'radial-gradient(ellipse at 50% 0%, #000 30%, transparent 75%)' }}></div>
       <div className="noise"></div>
@@ -359,7 +359,6 @@ function Hero({ t }) {
           gridTemplateColumns: '1.05fr 1fr',
           gap: 48,
           alignItems: 'center',
-          paddingTop: 24,
         }}>
           <div ref={ref} className="reveal hero-text">
             <h1 style={{
