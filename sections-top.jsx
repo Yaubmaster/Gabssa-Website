@@ -215,9 +215,14 @@ function Navbar({ lang, setLang, t }) {
         @keyframes popInCorner { from { opacity: 0; transform: translateY(-8px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
         @media (max-width: 880px) {
           .mobile-menu-btn { display: flex !important; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--border) !important; background: rgba(255,255,255,0.04) !important; }
-          .nav .lang-pill { display: none; }
           .nav-cta { display: none !important; }
           .btn-grad-desktop-only { display: none; }
+          .nav .lang-pill { padding: 2px; font-size: 11px; }
+          .nav .lang-pill button { padding: 5px 9px; }
+        }
+        @media (max-width: 380px) {
+          .nav-inner { gap: 10px !important; padding: 0 14px !important; }
+          .nav .lang-pill button { padding: 5px 7px; }
         }
       `}</style>
     </nav>

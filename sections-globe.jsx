@@ -186,7 +186,7 @@ function DotGlobe() {
   }, []);
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: 460 }}>
+    <div className="globe-canvas-inner" style={{ position: 'relative', width: '100%', maxWidth: '100%', height: '100%', minHeight: 460 }}>
       <canvas
         ref={canvasRef}
         style={{ width: '100%', height: '100%', display: 'block' }}
@@ -262,7 +262,7 @@ function GlobeSection({ lang, t }) {
 
         <div style={{ position: 'relative', marginTop: 32 }}>
           {/* Centered globe */}
-          <div style={{ position: 'relative', height: 'min(520px, 70vw)', maxWidth: 800, margin: '0 auto' }}>
+          <div className="globe-canvas-wrap" style={{ position: 'relative', height: 'min(520px, 70vw)', width: '100%', maxWidth: 800, margin: '0 auto' }}>
             <DotGlobe />
           </div>
 
@@ -346,26 +346,30 @@ function GlobeSection({ lang, t }) {
           pointer-events: auto;
           width: 200px;
           padding: 28px 20px;
+          min-width: 0;
+          overflow-wrap: anywhere;
+          word-break: break-word;
         }
         @media (max-width: 1100px) {
           .globe-stats-overlay {
             position: static;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
             gap: 16px;
             margin-top: 24px;
             padding: 0;
           }
           .globe-col-left, .globe-col-right {
             width: auto;
-            padding: 22px 20px;
+            padding: 22px 18px;
             background: rgba(255,255,255,0.03);
             border: 1px solid var(--border);
             border-radius: 14px;
           }
         }
         @media (max-width: 640px) {
-          .globe-stats-overlay { grid-template-columns: 1fr; }
+          .globe-stats-overlay { grid-template-columns: minmax(0, 1fr); }
+          .globe-col-left, .globe-col-right { padding: 18px 14px; }
         }
       `}</style>
     </section>
