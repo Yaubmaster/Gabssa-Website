@@ -644,8 +644,8 @@ footer a:hover { color: var(--text-primary); }
 /* Responsive */
 @media (max-width: 880px) {
   .nav-links { display: none; }
-  .section { padding: 44px 0; }
-  .section-head { margin-bottom: 26px; }
+  .section { padding: 32px 0; }
+  .section-head { margin-bottom: 20px; }
   .section-head h2 { font-size: clamp(1.6rem, 6vw, 2.2rem) !important; }
   .section-head p { font-size: 15.5px !important; }
   .container { padding: 0 20px; }
@@ -662,7 +662,8 @@ footer a:hover { color: var(--text-primary); }
 
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
-  .section { padding: 36px 0; }
+  .section { padding: 24px 0; }
+  .section-head { margin-bottom: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

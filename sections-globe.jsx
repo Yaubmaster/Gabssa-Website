@@ -186,7 +186,7 @@ function DotGlobe() {
   }, []);
 
   return (
-    <div className="globe-canvas-inner" style={{ position: 'relative', width: '100%', maxWidth: '100%', height: '100%', minHeight: 460 }}>
+    <div className="globe-canvas-inner" style={{ position: 'relative', width: '100%', maxWidth: '100%', height: '100%' }}>
       <canvas
         ref={canvasRef}
         style={{ width: '100%', height: '100%', display: 'block' }}
@@ -262,7 +262,7 @@ function GlobeSection({ lang, t }) {
 
         <div style={{ position: 'relative', marginTop: 32 }}>
           {/* Centered globe */}
-          <div className="globe-canvas-wrap" style={{ position: 'relative', height: 'min(520px, 70vw)', width: '100%', maxWidth: 800, margin: '0 auto' }}>
+          <div className="globe-canvas-wrap" style={{ position: 'relative', height: 'min(520px, 78vw)', minHeight: 320, width: '100%', maxWidth: 800, margin: '0 auto' }}>
             <DotGlobe />
           </div>
 

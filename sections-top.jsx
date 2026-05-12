@@ -427,9 +427,13 @@ function Hero({ t }) {
 
       <style>{`
         @media (max-width: 880px) {
-          .hero-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+          #top { padding-top: 84px !important; padding-bottom: 36px !important; }
+          .hero-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
           .hero-text { order: 1; }
           .hero-photo { order: 2; max-width: 360px !important; margin: 0 auto !important; }
+        }
+        @media (max-width: 480px) {
+          #top { padding-top: 78px !important; padding-bottom: 28px !important; }
         }
       `}</style>
     </section>
