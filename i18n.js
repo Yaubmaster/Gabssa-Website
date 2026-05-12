@@ -162,7 +162,7 @@ window.I18N = {
       whatsapp: 'Postula vía WhatsApp',
       call: 'Llámanos · 5597 731 515',
       perksTitle: 'Beneficios',
-      perks: ['Salario competitivo + bonos por desempeño', 'Capacitación continua en AI y CX', 'Crecimiento en una empresa con +30 años', 'Seguro de gastos médicos mayores', 'Caja de ahorro y prestaciones de ley superiores'],
+      perks: ['Salario competitivo + bonos por desempeño', 'Capacitación continua en AI y CX', 'Crecimiento en una empresa con +30 años', 'Caja de ahorro y prestaciones de ley superiores'],
     },
     contact: {
       eyebrow: 'CONTACTO',
@@ -371,7 +371,7 @@ window.I18N = {
       whatsapp: 'Apply via WhatsApp',
       call: 'Call us · 5597 731 515',
       perksTitle: 'Benefits',
-      perks: ['Competitive salary + performance bonuses', 'Continuous training in AI and CX', 'Growth in a company with 30+ years', 'Major medical insurance', 'Savings fund and above-statutory benefits'],
+      perks: ['Competitive salary + performance bonuses', 'Continuous training in AI and CX', 'Growth in a company with 30+ years', 'Savings fund and above-statutory benefits'],
     },
     contact: {
       eyebrow: 'CONTACT',
