@@ -497,7 +497,7 @@ Object.assign(window, { BrandPhoto, HeroPhotoCarousel });
 
 /* ═════════════ CLIENTS MARQUEE ═════════════ */
 function ClientsMarquee() {
-  const clients = window.CLIENTS;
+  const items = window.TECH_STACK || [];
   const tile = (c, key) => c.logo ? (
     <div key={key} className={'logo-tile in-marquee logo-img-tile' + (c.color ? ' logo-color' : '') + (c.svg ? ' logo-svg-white' : '')} title={c.name}>
       <img src={c.logo} alt={c.name} />
@@ -508,8 +508,8 @@ function ClientsMarquee() {
   return (
     <div className="marquee">
       <div className="marquee-track">
-        {clients.map((c, i) => tile(c, `a-${i}`))}
-        {clients.map((c, i) => tile(c, `b-${i}`))}
+        {items.map((c, i) => tile(c, `a-${i}`))}
+        {items.map((c, i) => tile(c, `b-${i}`))}
       </div>
     </div>
   );
