@@ -444,6 +444,7 @@ window.TECH_STACK = [
   // Drop logos into assets/ and set `logo: 'assets/tech-<slug>.png'` to swap in.
   { name: 'CrowdStrike', logo: 'assets/tech-crowdstrike.png', color: true },
   { name: 'Triara',      logo: 'assets/tech-triara.png', svg: true },
+  { name: 'AWS',         logo: 'assets/tech-aws.png', svg: true },
   { name: 'Avaya',       logo: 'assets/tech-avaya.png', color: true },
   { name: 'inConcert',   logo: 'assets/tech-inconcert.png', svg: true },
   { name: 'Concentrix',  logo: 'assets/tech-concentrix.png', svg: true },
