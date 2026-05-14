@@ -464,7 +464,7 @@ window.TECH_STACK = [
 
   // Data / BI / CRM
   { name: 'NATSA',       logo: 'assets/tech-natsa.png', color: true },
-  { name: 'Tableau',     logo: 'assets/tech-tableau.png', svg: true },
+  { name: 'Tableau',     logo: 'assets/tech-tableau.png', svg: true, bigger: true },
   { name: 'Salesforce',  logo: 'assets/tech-salesforce.png', color: true },
 
   // AI / LLMs / voice
