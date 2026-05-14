@@ -445,15 +445,18 @@ window.TECH_STACK = [
 
   // Security / cloud / infra
   { name: 'CrowdStrike', logo: 'assets/tech-crowdstrike.png', color: true },
+  { name: 'Biostar',     logo: 'assets/tech-biostar.png', svg: true },
   { name: 'Triara',      logo: 'assets/tech-triara.png', svg: true },
   { name: 'AWS',         logo: 'assets/tech-aws.png', svg: true },
   { name: 'Totalplay',   logo: 'assets/tech-totalplay.png', color: true },
 
-  // Telephony / comms infra
+  // Telephony / comms
   { name: 'Avaya',       logo: 'assets/tech-avaya.png', color: true },
   { name: 'Marcatel',    logo: 'assets/tech-marcatel.png', svg: true },
   { name: 'Alianzatel',  logo: 'assets/tech-alianzatel.png', color: true },
   { name: 'Twilio',      logo: 'assets/tech-twilio.png', color: true },
+  { name: 'Slack',       logo: 'assets/tech-slack.png', svg: true },
+  { name: 'Teams',       logo: 'assets/tech-teams.svg', color: true },
 
   // Contact center / CX platforms
   { name: 'inConcert',   logo: 'assets/tech-inconcert.png', svg: true, bigger: true },
@@ -461,11 +464,13 @@ window.TECH_STACK = [
 
   // Data / BI / CRM
   { name: 'NATSA',       logo: 'assets/tech-natsa.png', color: true },
+  { name: 'Tableau',     logo: 'assets/tech-tableau.png', svg: true },
   { name: 'Salesforce',  logo: 'assets/tech-salesforce.png', color: true },
 
   // AI / LLMs / voice
   { name: 'Claude',      logo: 'assets/tech-claude.png', svg: true },
   { name: 'OpenAI',      logo: 'assets/tech-openai.png', svg: true },
+  { name: 'Copilot',     logo: 'assets/tech-copilot.svg', svg: true },
   { name: 'ElevenLabs',  logo: 'assets/tech-elevenlabs.png', color: true },
   { name: 'Deepgram',    logo: 'assets/tech-deepgram.png', color: true },
   { name: 'Yaub',        logo: 'assets/tech-yaub.png', color: true },
