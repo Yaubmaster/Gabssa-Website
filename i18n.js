@@ -448,6 +448,8 @@ window.TECH_STACK = [
   { name: 'Biostar',     logo: 'assets/tech-biostar.png', svg: true },
   { name: 'Triara',      logo: 'assets/tech-triara.png', svg: true },
   { name: 'AWS',         logo: 'assets/tech-aws.png', svg: true },
+  { name: 'HP',          logo: 'assets/tech-hp.png', color: true },
+  { name: 'NVIDIA',      logo: 'assets/tech-nvidia.png', svg: true },
   { name: 'Totalplay',   logo: 'assets/tech-totalplay.png', color: true },
 
   // Telephony / comms
