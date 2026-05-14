@@ -442,10 +442,10 @@ window.I18N = {
 window.TECH_STACK = [
   // Logo path optional — when undefined the marquee falls back to the name as text.
   // Drop logos into assets/ and set `logo: 'assets/tech-<slug>.png'` to swap in.
-  { name: 'CrowdStrike', logo: undefined },
+  { name: 'CrowdStrike', logo: 'assets/tech-crowdstrike.png', color: true },
   { name: 'Avaya',       logo: undefined },
-  { name: 'inConcert',   logo: undefined },
-  { name: 'Concentrix',  logo: undefined },
+  { name: 'inConcert',   logo: 'assets/tech-inconcert.png', svg: true },
+  { name: 'Concentrix',  logo: 'assets/tech-concentrix.png', svg: true },
   { name: 'Salesforce',  logo: undefined },
   { name: 'Claude',      logo: undefined },
   { name: 'OpenAI',      logo: undefined },
