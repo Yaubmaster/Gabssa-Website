@@ -321,6 +321,7 @@ button { font-family: inherit; }
   filter: brightness(0) invert(1);
   opacity: 0.9;
 }
+.logo-tile.logo-bigger img { height: 52px; max-width: 220px; }
 
 /* Service card */
 .svc-card {

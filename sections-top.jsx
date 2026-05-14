@@ -499,7 +499,7 @@ Object.assign(window, { BrandPhoto, HeroPhotoCarousel });
 function ClientsMarquee() {
   const items = window.TECH_STACK || [];
   const tile = (c, key) => c.logo ? (
-    <div key={key} className={'logo-tile in-marquee logo-img-tile' + (c.color ? ' logo-color' : '') + (c.svg ? ' logo-svg-white' : '')} title={c.name}>
+    <div key={key} className={'logo-tile in-marquee logo-img-tile' + (c.color ? ' logo-color' : '') + (c.svg ? ' logo-svg-white' : '') + (c.bigger ? ' logo-bigger' : '')} title={c.name}>
       <img src={c.logo} alt={c.name} />
     </div>
   ) : (

@@ -456,7 +456,7 @@ window.TECH_STACK = [
   { name: 'Twilio',      logo: 'assets/tech-twilio.png', color: true },
 
   // Contact center / CX platforms
-  { name: 'inConcert',   logo: 'assets/tech-inconcert.png', svg: true },
+  { name: 'inConcert',   logo: 'assets/tech-inconcert.png', svg: true, bigger: true },
   { name: 'Concentrix',  logo: 'assets/tech-concentrix.png', svg: true },
 
   // Data / BI / CRM
