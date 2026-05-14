@@ -19,7 +19,7 @@ window.I18N = {
       sub: 'Operamos la infraestructura BPO más sólida de México: +4,400 posiciones, 50 oficinas, certificaciones ISO 9001, ISO 27001 y PCI DSS — ahora potenciada con AI Agents para atención a clientes, cobranza, generación de leads y ventas.',
       cta1: 'Agenda una llamada',
       cta2: 'Ver clientes',
-      trust: 'Confianza de las marcas líderes en México',
+      trust: 'BIENVENIDO AL MUNDO GABSSA · CALIDAD Y TECNOLOGÍA SUPERIOR',
     },
     metrics: {
       eyebrow: 'POR LOS NÚMEROS',
@@ -33,10 +33,20 @@ window.I18N = {
       ],
     },
     clients: {
-      eyebrow: 'CLIENTES',
-      title: 'Las marcas más grandes de México confían en nosotros.',
-      sub: 'Operamos las conversaciones críticas de los líderes en banca, automotriz, retail, seguros, telecom y QSR.',
-      industries: 'BANCA · SEGUROS · AUTOMOTRIZ · RETAIL · TELECOM · QSR · GOBIERNO · EDUCACIÓN · ONG',
+      eyebrow: 'SECTORES · CASOS DE USO',
+      title: 'Operamos las conversaciones críticas de las industrias que más exigen.',
+      sub: 'Cada sector tiene reglas, idioma, cumplimiento y SLAs distintos. Diseñamos y operamos por industria — desde banca regulada hasta moderación de contenido a escala LATAM.',
+      sectors: [
+        { tag: 'BANCA',       desc: 'AI Voice en cobranza preventiva con cumplimiento Condusef desde día uno.' },
+        { tag: 'SEGUROS',     desc: 'Operación de siniestros y altas con flujos PCI DSS y handoff humano regulado.' },
+        { tag: 'AUTOMOTRIZ',  desc: 'Concierge multilingüe 24/7 para OEMs premium europeos y japoneses.' },
+        { tag: 'RETAIL',      desc: 'Soporte omnicanal a escala LATAM en voz, chat, email y WhatsApp.' },
+        { tag: 'TELECOM',     desc: 'Soporte y moderación regulada para plataformas digitales globales.' },
+        { tag: 'QSR',         desc: 'Atención al cliente 24/7 con AI y escalamiento humano sólo cuando es necesario.' },
+        { tag: 'SALUD',       desc: 'Agendamiento, triage y seguimiento clínico con trazabilidad auditable.' },
+        { tag: 'ONG',         desc: 'Procuración de fondos y diálogo ciudadano operado a escala nacional.' },
+      ],
+      industries: 'BANCA · SEGUROS · AUTOMOTRIZ · RETAIL · TELECOM · QSR · SALUD · GOBIERNO · EDUCACIÓN · ONG',
     },
     services: {
       eyebrow: 'SERVICIOS',
@@ -162,7 +172,7 @@ window.I18N = {
       whatsapp: 'Postula vía WhatsApp',
       call: 'Llámanos · 5597 731 515',
       perksTitle: 'Beneficios',
-      perks: ['Salario competitivo + bonos por desempeño', 'Capacitación continua en AI y CX', 'Crecimiento en una empresa con +30 años', 'Seguro de gastos médicos mayores', 'Caja de ahorro y prestaciones de ley superiores'],
+      perks: ['Salario competitivo + bonos por desempeño', 'Capacitación continua en AI y CX', 'Crecimiento en una empresa con +30 años', 'Préstamos y adelantos de nómina', 'Caja de ahorro y prestaciones de ley superiores'],
     },
     contact: {
       eyebrow: 'CONTACTO',
@@ -228,7 +238,7 @@ window.I18N = {
       sub: 'We operate Mexico\u2019s strongest BPO infrastructure: 4,400+ agent seats, 50 offices, ISO 9001, ISO 27001 and PCI DSS certifications — now powered by AI Agents for customer service, collections, lead generation and sales.',
       cta1: 'Book a call',
       cta2: 'See clients',
-      trust: 'Trusted by Mexico\u2019s leading brands',
+      trust: 'WELCOME TO THE GABSSA WORLD \u00b7 SUPERIOR QUALITY & TECHNOLOGY',
     },
     metrics: {
       eyebrow: 'BY THE NUMBERS',
@@ -242,10 +252,20 @@ window.I18N = {
       ],
     },
     clients: {
-      eyebrow: 'CLIENTS',
-      title: 'Mexico\u2019s biggest brands trust us.',
-      sub: 'We run the critical conversations for the leaders in banking, automotive, retail, insurance, telecom and QSR.',
-      industries: 'BANKING · INSURANCE · AUTOMOTIVE · RETAIL · TELECOM · QSR · GOVERNMENT · EDUCATION · NGO',
+      eyebrow: 'SECTORS · USE CASES',
+      title: 'We run the critical conversations of the industries that demand the most.',
+      sub: 'Every sector has its own rules, language, compliance and SLAs. We design and operate by industry — from regulated banking to content moderation at LATAM scale.',
+      sectors: [
+        { tag: 'BANKING',    desc: 'AI Voice for preventive collections with Condusef compliance from day one.' },
+        { tag: 'INSURANCE',  desc: 'Claims and enrollment ops with PCI DSS flows and regulated human handoff.' },
+        { tag: 'AUTOMOTIVE', desc: '24/7 multilingual concierge for premium European and Japanese OEMs.' },
+        { tag: 'RETAIL',     desc: 'Omnichannel support at LATAM scale across voice, chat, email and WhatsApp.' },
+        { tag: 'TELECOM',    desc: 'Regulated support and content moderation for global digital platforms.' },
+        { tag: 'QSR',        desc: '24/7 customer service with AI and human escalation only when needed.' },
+        { tag: 'HEALTH',     desc: 'Scheduling, triage and clinical follow-up with auditable traceability.' },
+        { tag: 'NGO',        desc: 'Fundraising and citizen engagement operated at national scale.' },
+      ],
+      industries: 'BANKING · INSURANCE · AUTOMOTIVE · RETAIL · TELECOM · QSR · HEALTH · GOVERNMENT · EDUCATION · NGO',
     },
     services: {
       eyebrow: 'SERVICES',
@@ -371,7 +391,7 @@ window.I18N = {
       whatsapp: 'Apply via WhatsApp',
       call: 'Call us · 5597 731 515',
       perksTitle: 'Benefits',
-      perks: ['Competitive salary + performance bonuses', 'Continuous training in AI and CX', 'Growth in a company with 30+ years', 'Major medical insurance', 'Savings fund and above-statutory benefits'],
+      perks: ['Competitive salary + performance bonuses', 'Continuous training in AI and CX', 'Growth in a company with 30+ years', 'Payroll loans and advances', 'Savings fund and above-statutory benefits'],
     },
     contact: {
       eyebrow: 'CONTACT',
@@ -418,6 +438,45 @@ window.I18N = {
     },
   },
 };
+
+window.TECH_STACK = [
+  // Logo path optional — when undefined the marquee falls back to the name as text.
+  // Drop logos into assets/ and set `logo: 'assets/tech-<slug>.png'` to swap in.
+
+  // Security / cloud / infra
+  { name: 'CrowdStrike', logo: 'assets/tech-crowdstrike.png', color: true },
+  { name: 'Biostar',     logo: 'assets/tech-biostar.png', svg: true },
+  { name: 'Triara',      logo: 'assets/tech-triara.png', svg: true },
+  { name: 'AWS',         logo: 'assets/tech-aws.png', svg: true },
+  { name: 'HP',          logo: 'assets/tech-hp.png', color: true },
+  { name: 'NVIDIA',      logo: 'assets/tech-nvidia.png', svg: true },
+  { name: 'Totalplay',   logo: 'assets/tech-totalplay.png', color: true },
+
+  // Telephony / comms
+  { name: 'Avaya',       logo: 'assets/tech-avaya.png', color: true },
+  { name: 'Marcatel',    logo: 'assets/tech-marcatel.png', svg: true },
+  { name: 'Alianzatel',  logo: 'assets/tech-alianzatel.png', color: true },
+  { name: 'Twilio',      logo: 'assets/tech-twilio.png', color: true },
+  { name: 'Slack',       logo: 'assets/tech-slack.png', svg: true },
+  { name: 'Teams',       logo: 'assets/tech-teams.svg', color: true },
+
+  // Contact center / CX platforms
+  { name: 'inConcert',   logo: 'assets/tech-inconcert.png', svg: true, bigger: true },
+  { name: 'Concentrix',  logo: 'assets/tech-concentrix.png', svg: true },
+
+  // Data / BI / CRM
+  { name: 'NATSA',       logo: 'assets/tech-natsa.png', color: true },
+  { name: 'Tableau',     logo: 'assets/tech-tableau.png', svg: true, bigger: true },
+  { name: 'Salesforce',  logo: 'assets/tech-salesforce.png', color: true },
+
+  // AI / LLMs / voice
+  { name: 'Claude',      logo: 'assets/tech-claude.png', svg: true },
+  { name: 'OpenAI',      logo: 'assets/tech-openai.png', svg: true },
+  { name: 'Copilot',     logo: 'assets/tech-copilot.svg', svg: true },
+  { name: 'ElevenLabs',  logo: 'assets/tech-elevenlabs.png', color: true },
+  { name: 'Deepgram',    logo: 'assets/tech-deepgram.png', color: true },
+  { name: 'Yaub',        logo: 'assets/tech-yaub.png', color: true },
+];
 
 window.CLIENTS = [
   { name: 'BBVA',          sector: 'banca',     logo: 'assets/client-bbva.svg', svg: true },

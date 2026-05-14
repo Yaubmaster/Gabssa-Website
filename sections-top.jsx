@@ -215,9 +215,14 @@ function Navbar({ lang, setLang, t }) {
         @keyframes popInCorner { from { opacity: 0; transform: translateY(-8px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
         @media (max-width: 880px) {
           .mobile-menu-btn { display: flex !important; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--border) !important; background: rgba(255,255,255,0.04) !important; }
-          .nav .lang-pill { display: none; }
           .nav-cta { display: none !important; }
           .btn-grad-desktop-only { display: none; }
+          .nav .lang-pill { padding: 2px; font-size: 11px; }
+          .nav .lang-pill button { padding: 5px 9px; }
+        }
+        @media (max-width: 380px) {
+          .nav-inner { gap: 10px !important; padding: 0 14px !important; }
+          .nav .lang-pill button { padding: 5px 7px; }
         }
       `}</style>
     </nav>
@@ -343,7 +348,7 @@ function HeroPhotoCarousel() {
 function Hero({ t }) {
   const ref = useReveal();
   return (
-    <section id="top" style={{ position: 'relative', paddingTop: 110, paddingBottom: 56, overflow: 'hidden' }}>
+    <section id="top" style={{ position: 'relative', paddingTop: 96, paddingBottom: 56, overflow: 'hidden' }}>
       <div className="mesh-hero"><div className="blob"></div></div>
       <div className="bg-grid" style={{ position: 'absolute', inset: 0, opacity: 0.45, zIndex: 1, maskImage: 'radial-gradient(ellipse at 50% 0%, #000 30%, transparent 75%)', WebkitMaskImage: 'radial-gradient(ellipse at 50% 0%, #000 30%, transparent 75%)' }}></div>
       <div className="noise"></div>
@@ -354,7 +359,6 @@ function Hero({ t }) {
           gridTemplateColumns: '1.05fr 1fr',
           gap: 48,
           alignItems: 'center',
-          paddingTop: 24,
         }}>
           <div ref={ref} className="reveal hero-text">
             <h1 style={{
@@ -423,9 +427,13 @@ function Hero({ t }) {
 
       <style>{`
         @media (max-width: 880px) {
-          .hero-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+          #top { padding-top: 84px !important; padding-bottom: 36px !important; }
+          .hero-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
           .hero-text { order: 1; }
           .hero-photo { order: 2; max-width: 360px !important; margin: 0 auto !important; }
+        }
+        @media (max-width: 480px) {
+          #top { padding-top: 78px !important; padding-bottom: 28px !important; }
         }
       `}</style>
     </section>
@@ -489,23 +497,20 @@ Object.assign(window, { BrandPhoto, HeroPhotoCarousel });
 
 /* ═════════════ CLIENTS MARQUEE ═════════════ */
 function ClientsMarquee() {
-  const clients = window.CLIENTS;
-  const row = (
-    <div className="marquee-track">
-      {clients.map((c, i) => (
-        c.logo ? (
-          <div key={i} className={'logo-tile in-marquee logo-img-tile' + (c.color ? ' logo-color' : '') + (c.svg ? ' logo-svg-white' : '')} title={c.name}>
-            <img src={c.logo} alt={c.name} />
-          </div>
-        ) : (
-          <div key={i} className="logo-tile in-marquee">{c.name}</div>
-        )
-      ))}
+  const items = window.TECH_STACK || [];
+  const tile = (c, key) => c.logo ? (
+    <div key={key} className={'logo-tile in-marquee logo-img-tile' + (c.color ? ' logo-color' : '') + (c.svg ? ' logo-svg-white' : '') + (c.bigger ? ' logo-bigger' : '')} title={c.name}>
+      <img src={c.logo} alt={c.name} />
     </div>
+  ) : (
+    <div key={key} className="logo-tile in-marquee">{c.name}</div>
   );
   return (
     <div className="marquee">
-      {row}{row}
+      <div className="marquee-track">
+        {items.map((c, i) => tile(c, `a-${i}`))}
+        {items.map((c, i) => tile(c, `b-${i}`))}
+      </div>
     </div>
   );
 }

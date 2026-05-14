@@ -30,8 +30,8 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 84px; }
-html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; overflow-x: hidden; overscroll-behavior-x: none; }
+html, body { margin: 0; padding: 0; max-width: 100%; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   font-family: var(--font-sans);
@@ -41,6 +41,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  overscroll-behavior-x: none;
+  touch-action: pan-y pinch-zoom;
 }
 
 img { max-width: 100%; display: block; }
@@ -258,7 +260,7 @@ button { font-family: inherit; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 @keyframes marquee {
   from { transform: translateX(0); }
-  to   { transform: translateX(-100%); }
+  to   { transform: translateX(-50%); }
 }
 
 /* Logo tile */
@@ -319,6 +321,7 @@ button { font-family: inherit; }
   filter: brightness(0) invert(1);
   opacity: 0.9;
 }
+.logo-tile.logo-bigger img { height: 52px; max-width: 220px; }
 
 /* Service card */
 .svc-card {
@@ -644,8 +647,8 @@ footer a:hover { color: var(--text-primary); }
 /* Responsive */
 @media (max-width: 880px) {
   .nav-links { display: none; }
-  .section { padding: 44px 0; }
-  .section-head { margin-bottom: 26px; }
+  .section { padding: 32px 0; }
+  .section-head { margin-bottom: 20px; }
   .section-head h2 { font-size: clamp(1.6rem, 6vw, 2.2rem) !important; }
   .section-head p { font-size: 15.5px !important; }
   .container { padding: 0 20px; }
@@ -662,7 +665,8 @@ footer a:hover { color: var(--text-primary); }
 
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
-  .section { padding: 36px 0; }
+  .section { padding: 24px 0; }
+  .section-head { margin-bottom: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

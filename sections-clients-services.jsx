@@ -1,18 +1,9 @@
 // sections-clients-services.jsx — Clients grid + Services 8-card grid
 
-/* ═════════════ CLIENTS GRID ═════════════ */
+/* ═════════════ SECTORS / USE CASES GRID ═════════════ */
 function Clients({ t }) {
   const ref = useReveal();
-  const clients = window.CLIENTS;
-  const sectorMap = {
-    banca: { es: 'Banca', en: 'Banking',     tone: 'cyan' },
-    automotriz: { es: 'Automotriz', en: 'Automotive', tone: 'red' },
-    retail: { es: 'Retail', en: 'Retail',    tone: 'cyan' },
-    telecom: { es: 'Telecom', en: 'Telecom', tone: 'red' },
-    seguros: { es: 'Seguros', en: 'Insurance', tone: 'cyan' },
-    qsr: { es: 'QSR', en: 'QSR',             tone: 'red' },
-    ong: { es: 'ONG', en: 'NGO',             tone: 'cyan' },
-  };
+  const sectors = t.clients.sectors || [];
   return (
     <section id="clientes" className="section" style={{ paddingTop: 60 }}>
       <div className="container">
@@ -23,44 +14,63 @@ function Clients({ t }) {
         </div>
 
         <div className="grid" style={{
-          gridTemplateColumns: 'repeat(5, 1fr)',
+          gridTemplateColumns: 'repeat(4, 1fr)',
           gap: 14,
         }} id="clients-grid">
-          {clients.map((c, i) => {
-            const meta = sectorMap[c.sector];
+          {sectors.map((s, i) => {
+            const tone = i % 2 === 0 ? 'cyan' : 'red';
             return (
-              <div key={i} className="logo-tile" style={{ flexDirection: 'column', gap: 6 }}>
-                <span style={{ fontSize: 16.5, color: 'inherit' }}>{c.name}</span>
+              <article key={i} className="sector-card" style={{
+                padding: '20px 18px',
+                borderRadius: 14,
+                border: '1px solid var(--border)',
+                background: 'linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01))',
+                display: 'flex', flexDirection: 'column', gap: 10,
+                transition: 'border-color .25s ease, transform .25s ease',
+              }}>
                 <span style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: 9.5,
-                  letterSpacing: '0.12em',
-                  color: meta.tone === 'cyan' ? 'var(--accent-tech)' : 'var(--accent-heritage)',
-                  opacity: 0.75,
+                  fontSize: 10.5,
+                  letterSpacing: '0.16em',
+                  color: tone === 'cyan' ? 'var(--accent-tech)' : 'var(--accent-heritage)',
                   textTransform: 'uppercase',
-                }}>{meta.es && (window.__lang === 'en' ? meta.en : meta.es)}</span>
-              </div>
+                  display: 'inline-flex', alignItems: 'center', gap: 7,
+                }}>
+                  <span style={{
+                    width: 6, height: 6, borderRadius: '50%',
+                    background: tone === 'cyan' ? 'var(--accent-tech)' : 'var(--accent-heritage)',
+                    boxShadow: tone === 'cyan' ? '0 0 8px var(--accent-tech)' : '0 0 8px var(--accent-heritage)',
+                  }}></span>
+                  {s.tag}
+                </span>
+                <p style={{
+                  margin: 0,
+                  fontSize: 13.5, lineHeight: 1.5,
+                  color: 'var(--text-secondary)',
+                }}>{s.desc}</p>
+              </article>
             );
           })}
         </div>
 
         <div style={{
-          marginTop: 40,
-          padding: '24px 28px',
+          marginTop: 32,
+          padding: '20px 24px',
           borderRadius: 14,
           border: '1px solid var(--border)',
           background: 'rgba(255,255,255,0.02)',
           textAlign: 'center',
           fontFamily: 'var(--font-mono)',
-          fontSize: 12,
+          fontSize: 11.5,
           letterSpacing: '0.16em',
           color: 'var(--text-secondary)',
         }}>{t.clients.industries}</div>
       </div>
 
       <style>{`
-        @media (max-width: 1000px) { #clients-grid { grid-template-columns: repeat(3, 1fr) !important; } }
-        @media (max-width: 640px)  { #clients-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+        .sector-card:hover { border-color: rgba(255,255,255,0.18); transform: translateY(-2px); }
+        @media (max-width: 1000px) { #clients-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+        @media (max-width: 560px)  { #clients-grid { grid-template-columns: 1fr !important; } }
       `}</style>
     </section>
   );
