@@ -442,15 +442,33 @@ window.I18N = {
 window.TECH_STACK = [
   // Logo path optional — when undefined the marquee falls back to the name as text.
   // Drop logos into assets/ and set `logo: 'assets/tech-<slug>.png'` to swap in.
+
+  // Security / cloud / infra
   { name: 'CrowdStrike', logo: 'assets/tech-crowdstrike.png', color: true },
   { name: 'Triara',      logo: 'assets/tech-triara.png', svg: true },
   { name: 'AWS',         logo: 'assets/tech-aws.png', svg: true },
+  { name: 'Totalplay',   logo: 'assets/tech-totalplay.png', color: true },
+
+  // Telephony / comms infra
   { name: 'Avaya',       logo: 'assets/tech-avaya.png', color: true },
+  { name: 'Marcatel',    logo: 'assets/tech-marcatel.png', svg: true },
+  { name: 'Alianzatel',  logo: 'assets/tech-alianzatel.png', color: true },
+  { name: 'Twilio',      logo: 'assets/tech-twilio.png', color: true },
+
+  // Contact center / CX platforms
   { name: 'inConcert',   logo: 'assets/tech-inconcert.png', svg: true },
   { name: 'Concentrix',  logo: 'assets/tech-concentrix.png', svg: true },
+
+  // Data / BI / CRM
+  { name: 'NATSA',       logo: 'assets/tech-natsa.png', color: true },
   { name: 'Salesforce',  logo: 'assets/tech-salesforce.png', color: true },
+
+  // AI / LLMs / voice
   { name: 'Claude',      logo: 'assets/tech-claude.png', svg: true },
   { name: 'OpenAI',      logo: 'assets/tech-openai.png', svg: true },
+  { name: 'ElevenLabs',  logo: 'assets/tech-elevenlabs.png', color: true },
+  { name: 'Deepgram',    logo: 'assets/tech-deepgram.png', color: true },
+  { name: 'Yaub',        logo: 'assets/tech-yaub.png', color: true },
 ];
 
 window.CLIENTS = [
