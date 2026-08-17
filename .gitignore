@@ -1,0 +1,28 @@
+# Empaquetados / respaldos — el repo ES la fuente de verdad, no un zip
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# Imágenes sueltas en la raíz: todo asset va en assets/
+/*.png
+/*.jpg
+/*.jpeg
+/*.svg
+/*.webp
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Dependencias / build (por si alguna vez se agrega build step)
+node_modules/
+dist/
+.cache/
+.vercel/
