@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Crevolution — Próximamente | Grupo GABSSA</title>
+<meta name="description" content="Crevolution — lo próximo de Grupo GABSSA. Muy pronto." />
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="../assets/logo-gabssa.png" />
+<link rel="stylesheet" href="../styles.css" />
+<style>
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .cr-nav {
+    position: relative;
+    z-index: 10;
+  }
+  .cr-nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 22px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .cr-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-family: var(--font-mono);
+    letter-spacing: 0.02em;
+    padding: 9px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    transition: all .2s ease;
+  }
+  .cr-back:hover {
+    border-color: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.06);
+    color: var(--text-primary);
+  }
+  .cr-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 24px 100px;
+  }
+  .cr-glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(700px ellipse at 50% 30%, rgba(224,69,69,0.14), transparent 60%),
+      radial-gradient(600px ellipse at 80% 70%, rgba(34,211,238,0.10), transparent 60%);
+    pointer-events: none;
+  }
+  .cr-content {
+    position: relative;
+    text-align: center;
+    max-width: 720px;
+  }
+  .cr-title-stack {
+    display: grid;
+    justify-items: center;
+    margin: 22px 0 0;
+  }
+  .cr-word {
+    grid-row: 1;
+    grid-column: 1;
+    font-size: clamp(2.75rem, 9.5vw, 6.5rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1;
+    white-space: nowrap;
+    animation: cr-crossfade 6s ease-in-out infinite;
+  }
+  .cr-word-b { animation-delay: 3s; }
+  @keyframes cr-crossfade {
+    0%   { opacity: 0; filter: blur(10px); transform: translateY(14px); }
+    8%   { opacity: 1; filter: blur(0);    transform: translateY(0); }
+    42%  { opacity: 1; filter: blur(0);    transform: translateY(0); }
+    50%  { opacity: 0; filter: blur(10px); transform: translateY(-14px); }
+    100% { opacity: 0; filter: blur(10px); transform: translateY(-14px); }
+  }
+  .cr-sub {
+    margin-top: 20px;
+    font-size: 15px;
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cr-word { animation: none; opacity: 1; filter: none; transform: none; }
+    .cr-word-b { display: none; }
+  }
+  @media (max-width: 600px) {
+    .cr-nav-inner { padding: 18px 20px; }
+    .cr-back span.cr-back-label { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="cr-nav">
+  <div class="cr-nav-inner">
+    <a href="../index.html" class="cr-back">
+      ← <span class="cr-back-label">Volver al sitio</span>
+    </a>
+  </div>
+</nav>
+
+<main class="cr-main">
+  <div class="cr-glow"></div>
+  <div class="cr-content">
+    <span class="eyebrow red"><span class="dot"></span>GRUPO GABSSA</span>
+    <h1 class="cr-title-stack">
+      <span class="cr-word cr-word-a grad-text">Crevolution</span>
+      <span class="cr-word cr-word-b grad-text">Próximamente</span>
+    </h1>
+    <p class="cr-sub">2026</p>
+  </div>
+</main>
+
+</body>
+</html>
