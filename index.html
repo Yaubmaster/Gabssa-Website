@@ -36,5 +36,11 @@
 <script type="text/babel" src="sections-end.jsx"></script>
 <script type="text/babel" src="app.jsx"></script>
 
+<!-- Chat de Yaub. La clave wk_ es pública por diseño: viaja en el HTML y solo sirve
+     para conversar con este agente. Color, posición, logo y saludo se configuran en el
+     panel de Yaub, no aquí. Sin `integrity`: el archivo cambia con cada despliegue de la
+     plataforma y un hash congelado lo rompería. -->
+<script src="https://platform.yaub.ai/widget.js" data-key="wk_JOko0sRY8lscT6ocN9cF6W05" async></script>
+
 </body>
 </html>
