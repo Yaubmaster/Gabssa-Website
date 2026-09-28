@@ -436,13 +436,43 @@ function Careers({ lang, t }) {
 }
 
 /* ═════════════ CONTACT ═════════════ */
+// El formulario envía por el mismo servicio del chat de Yaub (widget-chat, action "form"):
+// genera un folio, registra al prospecto y avisa por correo a cag@gabssa.com.mx.
+// La llave wk_ es pública por diseño (la misma del <script> del chat en index.html);
+// el servidor solo la acepta desde los dominios autorizados de GABSSA.
+const CONTACT_ENDPOINT = 'https://xwjhuixuvmyzfhujvxhf.supabase.co/functions/v1/widget-chat';
+const CONTACT_KEY = 'wk_JOko0sRY8lscT6ocN9cF6W05';
+
 function Contact({ t }) {
   const ref = useReveal();
-  const [sent, setSent] = useState(false);
-  const onSubmit = (e) => {
+  // idle → sending → sent | error
+  const [status, setStatus] = useState('idle');
+  const [folio, setFolio] = useState(null);
+  const [errorMsg, setErrorMsg] = useState('');
+  const onSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 5000);
+    if (status === 'sending') return;
+    const formEl = e.currentTarget;
+    const data = Object.fromEntries(new FormData(formEl).entries());
+    setStatus('sending');
+    setErrorMsg('');
+    try {
+      const r = await fetch(CONTACT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'form', key: CONTACT_KEY, parent_domain: location.hostname, form: data }),
+      });
+      const out = await r.json().catch(() => ({}));
+      if (!r.ok || !out.ok) throw new Error(out.error || String(r.status));
+      setFolio(out.folio || null);
+      setStatus('sent');
+      formEl.reset();
+    } catch (err) {
+      // El detalle técnico va a consola; al visitante, el mensaje del sitio en su idioma.
+      console.warn('contacto:', err && err.message);
+      setErrorMsg(t.contact.form.error);
+      setStatus('error');
+    }
   };
 
   return (
@@ -461,21 +491,24 @@ function Contact({ t }) {
         }} id="contact-grid">
 
           {/* Form */}
-          <form onSubmit={onSubmit} className="glass-strong" style={{ padding: 32 }}>
+          <form onSubmit={onSubmit} className="glass-strong" style={{ padding: 32, position: 'relative' }}>
+            {/* Honeypot: invisible para personas; si llega lleno, el servidor lo descarta. */}
+            <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true"
+              style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, opacity: 0 }} />
             <div className="grid" style={{ gridTemplateColumns: '1fr 1fr', gap: 18 }}>
-              <div><label>{t.contact.form.name}</label><input required type="text" /></div>
-              <div><label>{t.contact.form.company}</label><input required type="text" /></div>
-              <div><label>{t.contact.form.email}</label><input required type="email" /></div>
-              <div><label>{t.contact.form.phone}</label><input type="tel" /></div>
+              <div><label>{t.contact.form.name}</label><input name="nombre" required type="text" maxLength={120} autoComplete="name" /></div>
+              <div><label>{t.contact.form.company}</label><input name="empresa" required type="text" maxLength={160} autoComplete="organization" /></div>
+              <div><label>{t.contact.form.email}</label><input name="email" required type="email" maxLength={200} autoComplete="email" /></div>
+              <div><label>{t.contact.form.phone}</label><input name="telefono" type="tel" maxLength={20} autoComplete="tel" /></div>
               <div style={{ gridColumn: '1 / -1' }}>
                 <label>{t.contact.form.sector}</label>
-                <select>
+                <select name="sector">
                   {t.contact.form.sectorOptions.map((o, i) => <option key={i}>{o}</option>)}
                 </select>
               </div>
               <div style={{ gridColumn: '1 / -1' }}>
                 <label>{t.contact.form.message}</label>
-                <textarea required rows="4"></textarea>
+                <textarea name="mensaje" required rows="4" maxLength={2000}></textarea>
               </div>
             </div>
             <div style={{
@@ -483,9 +516,23 @@ function Contact({ t }) {
               display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 18, flexWrap: 'wrap',
             }}>
               <span style={{ fontSize: 12, color: 'var(--text-muted)' }}>{t.contact.form.agreement}</span>
-              <button type="submit" className="btn-grad" style={{ padding: '12px 22px' }}>
-                {sent ? <><ICONS.check size={15} stroke={2.5} /> {t.contact.form.sent}</> : <>{t.contact.form.submit} <ICONS.arrow size={15} /></>}
+              <button type="submit" className="btn-grad" disabled={status === 'sending'}
+                style={{ padding: '12px 22px', opacity: status === 'sending' ? 0.7 : 1 }}>
+                {status === 'sending'
+                  ? t.contact.form.sending
+                  : status === 'sent'
+                    ? <><ICONS.check size={15} stroke={2.5} /> {t.contact.form.sent}</>
+                    : <>{t.contact.form.submit} <ICONS.arrow size={15} /></>}
               </button>
+            </div>
+            <div role="status" aria-live="polite" style={{ marginTop: 16, fontSize: 14, lineHeight: 1.5 }}>
+              {status === 'sent' && (
+                <span style={{ color: 'var(--text-primary)' }}>
+                  {folio && <>{t.contact.form.sentFolio} <strong style={{ fontFamily: 'var(--font-mono)' }}>{folio}</strong>. </>}
+                  {t.contact.form.sentTail}
+                </span>
+              )}
+              {status === 'error' && <span style={{ color: '#E04545' }}>{errorMsg}</span>}
             </div>
           </form>
 
