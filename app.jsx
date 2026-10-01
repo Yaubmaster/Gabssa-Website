@@ -59,7 +59,7 @@ function CoffeeBubble({ lang }) {
     nudge: '¿Buscas trabajo?',
   };
 
-  const WA = '5218112133783';
+  const WA = '5215589591609';
   const preset = lang === 'en'
     ? '¡Hola Coffee & Job! I want to apply to Gabssa.'
     : '¡Hola Coffee & Job! Quiero aplicar a Gabssa.';
@@ -128,7 +128,7 @@ function CoffeeBubble({ lang }) {
             fontFamily: 'var(--font-mono)', fontSize: 10.5,
             color: 'var(--text-muted)', marginTop: 10, textAlign: 'center',
             letterSpacing: '0.06em',
-          }}>+52 81 1213 3783</div>
+          }}>+52 55 8959 1609</div>
         </div>
       )}
 
