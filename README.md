@@ -66,7 +66,7 @@ No requiere build step — sube los archivos tal cual.
 
 ## Notas operativas
 
-- **Coffee & Job (Reclutador AI)** — Floating WhatsApp bubble + banner en la sección de Carreras. Número configurado: `+52 81 1213 3783` en `app.jsx` y `sections-end.jsx`.
+- **Coffee & Job (Reclutador AI)** — Floating WhatsApp bubble + banner en la sección de Carreras. Número configurado: `+52 55 8959 1609` en `app.jsx` y `sections-end.jsx`.
 - **Form de contacto** — Hace `e.preventDefault()` y muestra estado "Recibido". Para producción, conecta el `onSubmit` a tu endpoint (`/api/contact`, Formspree, Resend, etc.).
 - **Cookie banner** — Cumple LFPDPPP (Aviso de Privacidad MX). Persiste decisión en `localStorage`.
 - **Idioma** — Toggle ES/EN en navbar, persiste en `localStorage`. Default ES.
