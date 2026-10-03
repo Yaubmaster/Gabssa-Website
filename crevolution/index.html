@@ -550,18 +550,23 @@ html{scroll-behavior:smooth}
 </div>
 <div style="background: #0A0A0A; color: #F2F0ED; border-radius: 16px; padding: clamp(24px, 3vw, 40px)">
 <div data-if="notSent">
-<form id="crev-form" style="display: flex; flex-direction: column; gap: 16px">
-<label style="display: flex; flex-direction: column; gap: 8px"><span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .18em; color: #A8A5A1">NOMBRE</span><input class="ginput" type="text" name="nombre" autocomplete="name" required style="background: #141414; border: 1.5px solid #2e2e2e; border-radius: 6px; color: #F2F0ED; padding: 14px; font-size: 15px; font-family: inherit; min-height: 48px; box-sizing: border-box"></label>
-<label style="display: flex; flex-direction: column; gap: 8px"><span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .18em; color: #A8A5A1">EMPRESA</span><input class="ginput" type="text" name="empresa" autocomplete="organization" style="background: #141414; border: 1.5px solid #2e2e2e; border-radius: 6px; color: #F2F0ED; padding: 14px; font-size: 15px; font-family: inherit; min-height: 48px; box-sizing: border-box"></label>
-<label style="display: flex; flex-direction: column; gap: 8px"><span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .18em; color: #A8A5A1">CORREO CORPORATIVO</span><input class="ginput" type="email" name="correo" autocomplete="email" required style="background: #141414; border: 1.5px solid #2e2e2e; border-radius: 6px; color: #F2F0ED; padding: 14px; font-size: 15px; font-family: inherit; min-height: 48px; box-sizing: border-box"></label>
-<label style="display: flex; flex-direction: column; gap: 8px"><span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .18em; color: #A8A5A1">WHATSAPP</span><input class="ginput" type="tel" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="+52 55 0000 0000" style="background: #141414; border: 1.5px solid #2e2e2e; border-radius: 6px; color: #F2F0ED; padding: 14px; font-size: 15px; font-family: inherit; min-height: 48px; box-sizing: border-box"></label>
-<button type="submit" class="gbtn gx" style="margin-top: 6px; background: #FF3B14; color: #0A0A0A; border: none; border-radius: 4px; padding: 18px; min-height: 56px; font-size: 13px; font-weight: 900; letter-spacing: .16em; cursor: pointer">QUIERO QUE ME CONTACTEN</button>
+<form id="crev-form" style="display: flex; flex-direction: column; gap: 16px; position: relative">
+<!-- Honeypot: invisible para personas; si llega lleno, el servidor lo descarta. -->
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position: absolute; left: -10000px; width: 1px; height: 1px; opacity: 0">
+<label style="display: flex; flex-direction: column; gap: 8px"><span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .18em; color: #A8A5A1">NOMBRE</span><input class="ginput" type="text" name="nombre" autocomplete="name" maxlength="120" required style="background: #141414; border: 1.5px solid #2e2e2e; border-radius: 6px; color: #F2F0ED; padding: 14px; font-size: 15px; font-family: inherit; min-height: 48px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 8px"><span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .18em; color: #A8A5A1">EMPRESA</span><input class="ginput" type="text" name="empresa" autocomplete="organization" maxlength="160" required style="background: #141414; border: 1.5px solid #2e2e2e; border-radius: 6px; color: #F2F0ED; padding: 14px; font-size: 15px; font-family: inherit; min-height: 48px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 8px"><span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .18em; color: #A8A5A1">CORREO CORPORATIVO</span><input class="ginput" type="email" name="correo" autocomplete="email" maxlength="200" required style="background: #141414; border: 1.5px solid #2e2e2e; border-radius: 6px; color: #F2F0ED; padding: 14px; font-size: 15px; font-family: inherit; min-height: 48px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 8px"><span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .18em; color: #A8A5A1">WHATSAPP</span><input class="ginput" type="tel" name="whatsapp" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="+52 55 0000 0000" style="background: #141414; border: 1.5px solid #2e2e2e; border-radius: 6px; color: #F2F0ED; padding: 14px; font-size: 15px; font-family: inherit; min-height: 48px; box-sizing: border-box"></label>
+<button type="submit" class="gbtn gx" style="margin-top: 6px; background: #FF3B14; color: #0A0A0A; border: none; border-radius: 4px; padding: 18px; min-height: 56px; font-size: 13px; font-weight: 900; letter-spacing: .16em; cursor: pointer" id="crev-send">QUIERO QUE ME CONTACTEN</button>
+<p id="crev-error" role="alert" hidden style="margin: 0; font-size: 14px; line-height: 1.5; color: #FF8A73"></p>
+<p style="margin: 0; font-size: 12px; line-height: 1.5; color: #8f8c88">Al enviar aceptas nuestro Aviso de Privacidad.</p>
 </form>
 </div>
 <div data-if="sent" hidden>
 <div style="display: flex; flex-direction: column; gap: 12px; padding: 20px 0">
 <span class="gd" style="font-size: 44px; line-height: 1; text-transform: uppercase; color: #FF3B14">Apuesta registrada</span>
 <span style="font-size: 16px; line-height: 1.5; color: #C9C6C2">Gracias por jugar con nosotros. Nuestro equipo te contactará muy pronto para agendar una reunión.</span>
+<span id="crev-folio" class="gx" hidden style="font-size: 12px; font-weight: 700; letter-spacing: .16em; color: #A8A5A1">TU FOLIO · <strong style="color: #F2F0ED"></strong></span>
 </div>
 </div>
 </div>
@@ -650,11 +655,64 @@ html{scroll-behavior:smooth}
       render();
     });
   });
-  // TODO(contacto): conectar al mismo envío del formulario principal (widget-chat · folio + aviso a cag@).
+  // El registro entra por el mismo servicio del formulario de Contacto (widget-chat, action
+  // "form") marcado como campaña CREVOLUTION: folio GAB-, lead y portal de leads, sin correo.
+  // La llave wk_ es pública por diseño; el servidor solo la acepta desde los dominios de GABSSA.
+  var ENDPOINT = 'https://xwjhuixuvmyzfhujvxhf.supabase.co/functions/v1/widget-chat';
+  var KEY = 'wk_JOko0sRY8lscT6ocN9cF6W05';
+  var sending = false;
   $('crev-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    state.sent = true;
-    render();
+    if (sending) return;
+    var form = e.currentTarget;
+    var d = new FormData(form);
+    var send = $('crev-send'), err = $('crev-error');
+    var carta = state.picked === null ? null : BRANDS[state.picked].name;
+    sending = true;
+    send.disabled = true;
+    send.textContent = 'ENVIANDO…';
+    err.hidden = true;
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: 'form',
+        key: KEY,
+        parent_domain: location.hostname,
+        form: {
+          campana: 'crevolution-2026',
+          nombre: d.get('nombre'),
+          empresa: d.get('empresa'),
+          email: d.get('correo'),
+          telefono: d.get('whatsapp'),
+          website: d.get('website'),
+          mensaje: 'Registro en la landing de CREVOLUTION 2026' + (carta ? ' · Carta elegida: ' + carta : '')
+        }
+      })
+    })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (out) { return { r: r, out: out }; }); })
+      .then(function (x) {
+        if (!x.r.ok || !x.out.ok) throw new Error(x.out.error || String(x.r.status));
+        if (x.out.folio) {
+          $('crev-folio').querySelector('strong').textContent = x.out.folio;
+          $('crev-folio').hidden = false;
+        }
+        state.sent = true;
+        form.reset();
+        render();
+      })
+      .catch(function (e2) {
+        console.warn('registro:', e2 && e2.message);
+        err.textContent = /falta|válid|varios envíos/i.test(e2 && e2.message || '')
+          ? e2.message
+          : 'No pudimos registrar tus datos. Intenta de nuevo en un momento.';
+        err.hidden = false;
+      })
+      .then(function () {
+        sending = false;
+        send.disabled = false;
+        send.textContent = 'QUIERO QUE ME CONTACTEN';
+      });
   });
 })();
 </script>

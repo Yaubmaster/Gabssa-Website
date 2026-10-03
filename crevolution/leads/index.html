@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leads web · Grupo GABSSA</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" type="image/png" href="/assets/logo-gabssa.png">
+<style>
+@font-face { font-family: 'Archivo'; font-weight: 400 900; font-stretch: 100% 125%; font-display: swap; src: url(/assets/crevolution/archivo-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Poppins'; font-weight: 400; font-display: swap; src: url(/assets/crevolution/poppins-400-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Poppins'; font-weight: 600; font-display: swap; src: url(/assets/crevolution/poppins-600-latin.woff2) format('woff2'); }
+:root {
+  --bg: #0A0A0A; --panel: #121212; --panel-2: #181818; --line: #262626; --line-2: #333;
+  --ink: #F2F0ED; --ink-2: #B5B2AE; --ink-3: #8f8c88; --accent: #FF3B14; --ok: #3ddc97;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Poppins', 'Helvetica Neue', sans-serif; font-size: 15px; }
+a { color: var(--accent); }
+button, input { font: inherit; }
+[hidden] { display: none !important; }
+.gx { font-family: 'Archivo', sans-serif; font-stretch: 125%; }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
+
+/* ── barra superior ── */
+.top { border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 16px; padding-bottom: 16px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand img { height: 34px; width: auto; display: block; }
+.brand .sep { width: 1px; height: 28px; background: var(--line-2); }
+.brand .t { font-size: 12px; font-weight: 800; letter-spacing: .2em; color: var(--ink-2); }
+.who { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 13px; color: var(--ink-3); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 40px; padding: 0 16px; border-radius: 6px; border: 1.5px solid var(--line-2); background: transparent; color: var(--ink); cursor: pointer; font-size: 12px; font-weight: 700; letter-spacing: .12em; font-family: 'Archivo', sans-serif; font-stretch: 125%; }
+.btn:hover { border-color: var(--ink-3); }
+.btn:disabled { opacity: .5; cursor: default; }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: #0A0A0A; font-weight: 900; }
+.btn-primary:hover { border-color: var(--accent); filter: brightness(1.08); }
+
+/* ── login / contraseña ── */
+.center { min-height: calc(100vh - 140px); display: flex; align-items: center; justify-content: center; padding: 40px 16px; }
+.card { width: 100%; max-width: 420px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 32px; display: flex; flex-direction: column; gap: 18px; }
+.card img { height: 44px; width: auto; align-self: flex-start; }
+.card h1 { margin: 0; font-size: 24px; font-weight: 600; }
+.card p { margin: 0; color: var(--ink-2); font-size: 14px; line-height: 1.55; }
+label.f { display: flex; flex-direction: column; gap: 8px; }
+label.f span { font-size: 11px; font-weight: 700; letter-spacing: .18em; color: var(--ink-3); font-family: 'Archivo', sans-serif; font-stretch: 125%; }
+input.in { background: var(--panel-2); border: 1.5px solid var(--line-2); border-radius: 6px; color: var(--ink); padding: 12px 14px; min-height: 46px; width: 100%; }
+input.in:focus { outline: none; border-color: var(--accent); }
+.msg { margin: 0; font-size: 14px; color: #FF8A73; }
+
+/* ── tablero ── */
+.head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 28px 0 18px; }
+.head h1 { margin: 0; font-size: clamp(26px, 3.4vw, 36px); font-weight: 600; }
+.head .sub { margin: 6px 0 0; color: var(--ink-3); font-size: 13px; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.tab { display: inline-flex; align-items: center; gap: 10px; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1.5px solid var(--line-2); background: transparent; color: var(--ink-2); cursor: pointer; font-size: 13px; }
+.tab b { font-family: 'Archivo', sans-serif; font-stretch: 125%; color: var(--ink); }
+.tab[aria-pressed="true"] { border-color: var(--accent); color: var(--ink); background: rgba(255, 59, 20, .12); }
+.search { margin-bottom: 16px; max-width: 460px; }
+
+.table-wrap { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--panel); }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .14em; color: var(--ink-3); padding: 12px 14px; border-bottom: 1px solid var(--line); font-family: 'Archivo', sans-serif; font-stretch: 125%; white-space: nowrap; }
+td { padding: 12px 14px; border-bottom: 1px solid var(--line); font-size: 14px; vertical-align: top; }
+tbody tr { cursor: pointer; }
+tbody tr:hover td { background: var(--panel-2); }
+tbody tr:last-child td { border-bottom: none; }
+.folio { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; color: var(--ink-2); white-space: nowrap; }
+.pill { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .08em; padding: 4px 9px; border-radius: 999px; border: 1px solid var(--line-2); color: var(--ink-2); white-space: nowrap; font-family: 'Archivo', sans-serif; font-stretch: 125%; }
+.pill.crev { border-color: var(--accent); color: var(--ink); background: rgba(255, 59, 20, .14); }
+.muted { color: var(--ink-3); }
+.empty { padding: 48px 20px; text-align: center; color: var(--ink-3); }
+.empty strong { display: block; color: var(--ink); font-size: 17px; margin-bottom: 6px; font-weight: 600; }
+
+/* ── detalle ── */
+.shade { position: fixed; inset: 0; background: rgba(0, 0, 0, .6); z-index: 20; }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(480px, 100%); background: var(--panel); border-left: 1px solid var(--line); z-index: 21; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 18px; }
+.drawer-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.drawer h2 { margin: 6px 0 0; font-size: 22px; font-weight: 600; }
+dl { margin: 0; display: grid; grid-template-columns: 140px 1fr; gap: 10px 14px; font-size: 14px; }
+dt { color: var(--ink-3); }
+dd { margin: 0; word-break: break-word; }
+
+/* ── pie ── */
+.foot { border-top: 1px solid var(--line); margin-top: 40px; }
+.foot .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 18px; padding-bottom: 18px; flex-wrap: wrap; font-size: 12px; color: var(--ink-3); }
+.powered { display: inline-flex; align-items: center; gap: 10px; color: var(--ink-2); text-decoration: none; font-size: 12px; letter-spacing: .08em; }
+.powered img { height: 26px; width: auto; display: block; }
+.powered:hover { color: var(--ink); }
+
+@media (max-width: 760px) {
+  thead { display: none; }
+  table, tbody, tr, td { display: block; width: 100%; }
+  tr { border-bottom: 1px solid var(--line); padding: 10px 0; }
+  td { border: none; padding: 4px 14px; }
+  td[data-k]::before { content: attr(data-k); display: block; font-size: 10px; letter-spacing: .14em; color: var(--ink-3); font-family: 'Archivo', sans-serif; font-stretch: 125%; }
+  dl { grid-template-columns: 1fr; gap: 2px; }
+  dd { margin-bottom: 10px; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <img src="/assets/crevolution/logo-grupo-gabssa.png" alt="Grupo GABSSA">
+      <span class="sep" aria-hidden="true"></span>
+      <span class="t gx">LEADS WEB</span>
+    </div>
+    <div class="who" id="who" hidden>
+      <span id="who-name"></span>
+      <button class="btn" type="button" id="btn-pass">CAMBIAR CONTRASEÑA</button>
+      <button class="btn" type="button" id="btn-out">SALIR</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Login -->
+  <section class="center" id="v-login" hidden>
+    <form class="card" id="f-login">
+      <img src="/assets/crevolution/logo-grupo-gabssa.png" alt="Grupo GABSSA">
+      <h1>Leads del sitio web</h1>
+      <p>Registros de CREVOLUTION, del formulario de Contacto y del chat de gabssamexico.com.</p>
+      <label class="f"><span>CORREO</span><input class="in" type="email" name="email" autocomplete="username" required></label>
+      <label class="f"><span>CONTRASEÑA</span><input class="in" type="password" name="password" autocomplete="current-password" required></label>
+      <p class="msg" id="login-msg" role="alert" hidden></p>
+      <button class="btn btn-primary" type="submit" id="login-btn">ENTRAR</button>
+    </form>
+  </section>
+
+  <!-- Contraseña nueva -->
+  <section class="center" id="v-pass" hidden>
+    <form class="card" id="f-pass">
+      <h1 id="pass-title">Crea tu contraseña</h1>
+      <p id="pass-sub">Entraste con una contraseña temporal. Elige una nueva de al menos 10 caracteres.</p>
+      <label class="f"><span>CONTRASEÑA NUEVA</span><input class="in" type="password" name="p1" autocomplete="new-password" minlength="10" required></label>
+      <label class="f"><span>CONFÍRMALA</span><input class="in" type="password" name="p2" autocomplete="new-password" minlength="10" required></label>
+      <p class="msg" id="pass-msg" role="alert" hidden></p>
+      <button class="btn btn-primary" type="submit" id="pass-btn">GUARDAR</button>
+      <button class="btn" type="button" id="pass-cancel" hidden>CANCELAR</button>
+    </form>
+  </section>
+
+  <!-- Tablero -->
+  <section class="wrap" id="v-list" hidden>
+    <div class="head">
+      <div>
+        <h1>Leads</h1>
+        <p class="sub" id="updated"></p>
+      </div>
+      <div class="actions">
+        <button class="btn" type="button" id="btn-refresh">ACTUALIZAR</button>
+        <button class="btn btn-primary" type="button" id="btn-csv">EXPORTAR CSV</button>
+      </div>
+    </div>
+    <div class="tabs" id="tabs" role="group" aria-label="Filtrar por origen"></div>
+    <input class="in search" type="search" id="q" placeholder="Buscar nombre, empresa, correo o folio" aria-label="Buscar">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>FECHA</th><th>FOLIO</th><th>ORIGEN</th><th>NOMBRE</th><th>EMPRESA</th><th>CORREO</th><th>TELÉFONO</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div class="empty" id="empty" hidden></div>
+    </div>
+  </section>
+</main>
+
+<div class="shade" id="shade" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="Detalle del lead">
+  <div class="drawer-top">
+    <div><span class="folio" id="d-folio"></span><h2 id="d-name"></h2></div>
+    <button class="btn" type="button" id="d-close">CERRAR</button>
+  </div>
+  <dl id="d-fields"></dl>
+</aside>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Grupo GABSSA · Uso interno</span>
+    <a class="powered" href="https://www.yaub.ai/" target="_blank" rel="noopener">Powered by <img src="/assets/crevolution/logo-yaub.png" alt="Yaub AI"></a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.js"></script>
+<script>
+// Portal de solicitudes web de GABSSA. Lee public.web_solicitudes con la sesión de una
+// cuenta de portal: la RLS (web_solicitudes_viewers) le deja ver SOLO las solicitudes de
+// su tenant y nada más de la plataforma. La anon key es pública por diseño.
+(function () {
+  var SUPABASE_URL = 'https://xwjhuixuvmyzfhujvxhf.supabase.co';
+  var ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh3amh1aXh1dm15emZodWp2eGhmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI3NTQ4NTUsImV4cCI6MjA4ODMzMDg1NX0.PrSWH7FKvzb2OzvihmJCk6q-HjBOSg4540xAzOYK4s4';
+  var CAMPANAS = { 'crevolution-2026': 'CREVOLUTION 2026' };
+  var COLS = 'id,created_at,folio,origen,campana,tipo,area,prioridad,estatus,empresa,sector,servicio,necesidad,volumen,canales,motivo,descripcion,folio_anterior,contacto_nombre,contacto_puesto,contacto_telefono,contacto_email';
+  var sb = window.supabase.createClient(SUPABASE_URL, ANON_KEY, { auth: { persistSession: true, autoRefreshToken: true } });
+
+  var $ = function (id) { return document.getElementById(id); };
+  var rows = [], filtro = 'todos', timer = null;
+
+  function view(name) {
+    ['login', 'pass', 'list'].forEach(function (v) { $('v-' + v).hidden = v !== name; });
+    $('who').hidden = name === 'login';
+  }
+  function msg(id, text) { $(id).textContent = text || ''; $(id).hidden = !text; }
+
+  function origenDe(r) {
+    if (r.campana) return { key: 'c:' + r.campana, label: CAMPANAS[r.campana] || r.campana.toUpperCase(), crev: true };
+    if (r.origen === 'formulario') return { key: 'formulario', label: 'Formulario de contacto' };
+    return { key: 'chat', label: 'Chat del sitio' };
+  }
+  var fmt = new Intl.DateTimeFormat('es-MX', { timeZone: 'America/Mexico_City', day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  function fecha(iso) { return fmt.format(new Date(iso)); }
+  function waLink(tel) {
+    var d = String(tel || '').replace(/\D/g, '');
+    if (!d) return null;
+    return 'https://wa.me/' + (d.length === 10 ? '52' + d : d);
+  }
+  function el(tag, attrs, kids) {
+    var n = document.createElement(tag);
+    Object.keys(attrs || {}).forEach(function (k) { if (attrs[k] !== null && attrs[k] !== undefined) n.setAttribute(k, attrs[k]); });
+    (kids || []).forEach(function (c) { if (c !== null && c !== undefined) n.append(c.nodeType ? c : String(c)); });
+    return n;
+  }
+
+  // ── sesión ──
+  async function arrancar() {
+    var s = (await sb.auth.getSession()).data.session;
+    if (!s) return view('login');
+    var meta = s.user.user_metadata || {};
+    if (meta.password_change_required) return pedirPassword(true);
+    var v = await sb.from('web_solicitudes_viewers').select('nombre').maybeSingle();
+    if (v.error || !v.data) {
+      await sb.auth.signOut();
+      view('login');
+      return msg('login-msg', 'Esta cuenta no tiene acceso al portal de leads.');
+    }
+    $('who-name').textContent = s.user.email;
+    view('list');
+    await cargar();
+    if (timer) clearInterval(timer);
+    timer = setInterval(function () { if (!document.hidden) cargar(); }, 60000);
+  }
+
+  $('f-login').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var form = e.currentTarget, d = new FormData(form);
+    msg('login-msg', '');
+    $('login-btn').disabled = true;
+    var r = await sb.auth.signInWithPassword({ email: String(d.get('email')).trim(), password: String(d.get('password')) });
+    $('login-btn').disabled = false;
+    if (r.error) return msg('login-msg', /invalid/i.test(r.error.message) ? 'Correo o contraseña incorrectos.' : 'No pudimos iniciar sesión. Intenta de nuevo.');
+    form.reset();
+    arrancar();
+  });
+
+  function pedirPassword(obligatoria) {
+    $('pass-title').textContent = obligatoria ? 'Crea tu contraseña' : 'Cambiar contraseña';
+    $('pass-sub').textContent = obligatoria
+      ? 'Entraste con una contraseña temporal. Elige una nueva de al menos 10 caracteres.'
+      : 'Elige una contraseña nueva de al menos 10 caracteres.';
+    $('pass-cancel').hidden = obligatoria;
+    msg('pass-msg', '');
+    view('pass');
+  }
+  $('f-pass').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var form = e.currentTarget, d = new FormData(form);
+    var p1 = String(d.get('p1')), p2 = String(d.get('p2'));
+    if (p1.length < 10) return msg('pass-msg', 'Usa al menos 10 caracteres.');
+    if (p1 !== p2) return msg('pass-msg', 'Las contraseñas no coinciden.');
+    $('pass-btn').disabled = true;
+    var r = await sb.auth.updateUser({ password: p1, data: { password_change_required: false } });
+    $('pass-btn').disabled = false;
+    if (r.error) return msg('pass-msg', /different|same/i.test(r.error.message) ? 'La contraseña nueva debe ser distinta a la anterior.' : 'No se pudo guardar. Intenta con otra contraseña.');
+    form.reset();
+    arrancar();
+  });
+  $('pass-cancel').addEventListener('click', function () { view('list'); });
+  $('btn-pass').addEventListener('click', function () { pedirPassword(false); });
+  $('btn-out').addEventListener('click', async function () {
+    if (timer) clearInterval(timer);
+    await sb.auth.signOut();
+    rows = [];
+    view('login');
+  });
+
+  // ── datos ──
+  async function cargar() {
+    $('btn-refresh').disabled = true;
+    var r = await sb.from('web_solicitudes').select(COLS).order('created_at', { ascending: false }).limit(5000);
+    $('btn-refresh').disabled = false;
+    if (r.error) {
+      $('updated').textContent = 'No se pudieron cargar los leads. Intenta actualizar.';
+      return;
+    }
+    rows = r.data || [];
+    $('updated').textContent = rows.length + ' en total · actualizado ' + new Intl.DateTimeFormat('es-MX', { timeZone: 'America/Mexico_City', hour: '2-digit', minute: '2-digit' }).format(new Date());
+    pintar();
+  }
+
+  function filtrados() {
+    var q = $('q').value.trim().toLowerCase();
+    return rows.filter(function (r) {
+      if (filtro !== 'todos' && origenDe(r).key !== filtro) return false;
+      if (!q) return true;
+      return [r.folio, r.contacto_nombre, r.empresa, r.contacto_email, r.contacto_telefono]
+        .some(function (v) { return v && String(v).toLowerCase().indexOf(q) >= 0; });
+    });
+  }
+
+  function pintar() {
+    // Pestañas por origen con conteo; CREVOLUTION primero.
+    var counts = {}, labels = {};
+    rows.forEach(function (r) { var o = origenDe(r); counts[o.key] = (counts[o.key] || 0) + 1; labels[o.key] = o.label; });
+    var keys = Object.keys(counts).sort(function (a, b) { return (b.indexOf('c:') === 0) - (a.indexOf('c:') === 0) || counts[b] - counts[a]; });
+    var tabs = $('tabs');
+    tabs.replaceChildren();
+    [['todos', 'Todos', rows.length]].concat(keys.map(function (k) { return [k, labels[k], counts[k]]; })).forEach(function (t) {
+      var b = el('button', { type: 'button', class: 'tab', 'aria-pressed': String(filtro === t[0]) }, [t[1], el('b', {}, [t[2]])]);
+      b.addEventListener('click', function () { filtro = t[0]; pintar(); });
+      tabs.append(b);
+    });
+
+    var list = filtrados(), tbody = $('rows');
+    tbody.replaceChildren();
+    list.forEach(function (r) {
+      var o = origenDe(r), wa = waLink(r.contacto_telefono);
+      var tr = el('tr', {}, [
+        el('td', { 'data-k': 'FECHA' }, [fecha(r.created_at)]),
+        el('td', { 'data-k': 'FOLIO', class: 'folio' }, [r.folio]),
+        el('td', { 'data-k': 'ORIGEN' }, [el('span', { class: 'pill' + (o.crev ? ' crev' : '') }, [o.label])]),
+        el('td', { 'data-k': 'NOMBRE' }, [r.contacto_nombre || el('span', { class: 'muted' }, ['—'])]),
+        el('td', { 'data-k': 'EMPRESA' }, [r.empresa || el('span', { class: 'muted' }, ['—'])]),
+        el('td', { 'data-k': 'CORREO' }, [r.contacto_email ? el('a', { href: 'mailto:' + r.contacto_email }, [r.contacto_email]) : el('span', { class: 'muted' }, ['—'])]),
+        el('td', { 'data-k': 'TELÉFONO' }, [wa ? el('a', { href: wa, target: '_blank', rel: 'noopener' }, [r.contacto_telefono]) : el('span', { class: 'muted' }, ['—'])]),
+      ]);
+      tr.addEventListener('click', function (ev) { if (!ev.target.closest('a')) detalle(r); });
+      tbody.append(tr);
+    });
+    var empty = $('empty');
+    empty.hidden = list.length > 0;
+    if (!list.length) {
+      empty.replaceChildren(
+        el('strong', {}, [rows.length ? 'Sin resultados' : 'Todavía no hay leads']),
+        rows.length ? 'Prueba con otra búsqueda u otro origen.' : 'Aquí aparecerán los registros en cuanto lleguen. La lista se actualiza sola cada minuto.'
+      );
+    }
+  }
+  $('q').addEventListener('input', pintar);
+  $('btn-refresh').addEventListener('click', cargar);
+
+  var CAMPOS = [
+    ['Fecha', function (r) { return fecha(r.created_at); }],
+    ['Origen', function (r) { return origenDe(r).label; }],
+    ['Tipo', function (r) { return { prospecto: 'Prospecto', cliente: 'Cliente actual', contacto: 'Contacto' }[r.tipo] || r.tipo; }],
+    ['Área', 'area'], ['Prioridad', 'prioridad'], ['Estatus', function (r) { return { nuevo: 'Nuevo', en_seguimiento: 'En seguimiento', cerrado: 'Cerrado' }[r.estatus] || r.estatus; }],
+    ['Nombre', 'contacto_nombre'], ['Puesto', 'contacto_puesto'], ['Empresa', 'empresa'],
+    ['Correo', 'contacto_email'], ['Teléfono', 'contacto_telefono'],
+    ['Sector', 'sector'], ['Servicio', 'servicio'], ['Necesidad', 'necesidad'], ['Volumen', 'volumen'],
+    ['Canales', 'canales'], ['Motivo', 'motivo'], ['Descripción', 'descripcion'], ['Folio anterior', 'folio_anterior'],
+  ];
+  function valor(r, f) { return typeof f === 'function' ? f(r) : r[f]; }
+  function detalle(r) {
+    $('d-folio').textContent = r.folio;
+    $('d-name').textContent = r.contacto_nombre || r.empresa || 'Lead';
+    var dl = $('d-fields');
+    dl.replaceChildren();
+    CAMPOS.forEach(function (c) {
+      var v = valor(r, c[1]);
+      if (v === null || v === undefined || v === '') return;
+      var dd = el('dd', {}, [String(v)]);
+      if (c[0] === 'Correo') dd = el('dd', {}, [el('a', { href: 'mailto:' + v }, [v])]);
+      if (c[0] === 'Teléfono' && waLink(v)) dd = el('dd', {}, [el('a', { href: waLink(v), target: '_blank', rel: 'noopener' }, [v + ' · WhatsApp'])]);
+      dl.append(el('dt', {}, [c[0]]), dd);
+    });
+    $('shade').hidden = false;
+    $('drawer').hidden = false;
+    $('d-close').focus();
+  }
+  function cerrar() { $('shade').hidden = true; $('drawer').hidden = true; }
+  $('d-close').addEventListener('click', cerrar);
+  $('shade').addEventListener('click', cerrar);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
+
+  // CSV con BOM para que Excel respete acentos.
+  $('btn-csv').addEventListener('click', function () {
+    var list = filtrados();
+    var head = CAMPOS.map(function (c) { return c[0]; }).concat(['Folio']);
+    var cel = function (v) { v = v === null || v === undefined ? '' : String(v); return /[",\n;]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+    var lines = [head.map(cel).join(',')].concat(list.map(function (r) {
+      return CAMPOS.map(function (c) { return cel(valor(r, c[1])); }).concat([cel(r.folio)]).join(',');
+    }));
+    var blob = new Blob(['﻿' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8' });
+    var a = el('a', { href: URL.createObjectURL(blob), download: 'leads-gabssa-' + new Date().toISOString().slice(0, 10) + '.csv' });
+    document.body.append(a);
+    a.click();
+    a.remove();
+  });
+
+  sb.auth.onAuthStateChange(function (ev) { if (ev === 'SIGNED_OUT') view('login'); });
+  arrancar();
+})();
+</script>
+</body>
+</html>
