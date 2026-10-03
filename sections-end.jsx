@@ -440,7 +440,7 @@ function Careers({ lang, t }) {
 // genera un folio, registra al prospecto y avisa por correo a cag@gabssa.com.mx.
 // La llave wk_ es pública por diseño (la misma del <script> del chat en index.html);
 // el servidor solo la acepta desde los dominios autorizados de GABSSA.
-const CONTACT_ENDPOINT = 'https://xwjhuixuvmyzfhujvxhf.supabase.co/functions/v1/widget-chat';
+const CONTACT_ENDPOINT = 'https://jmrejxuweidiugmfdpdx.supabase.co/functions/v1/widget-chat';
 const CONTACT_KEY = 'wk_JOko0sRY8lscT6ocN9cF6W05';
 
 function Contact({ t }) {
