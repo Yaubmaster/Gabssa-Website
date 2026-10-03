@@ -29,6 +29,9 @@ sections-globe.jsx      ← Globo 3D con México resaltado en rojo
 sections-map.jsx        ← Mapa de México SVG + Sectores + Certificaciones
 sections-end.jsx        ← Quiénes Somos + Casos + Carreras (Coffee&Job) + Contacto + Footer
 
+crevolution/index.html  ← /crevolution: landing «Operación Jackpot» (CREVOLUTION 2026),
+                          HTML estático + JS vanilla, independiente del sitio principal
+
 assets/                 ← ÚNICA carpeta de imágenes; todo lo que hay aquí se usa
   ├─ brand-*.png        ← Fotos del hero carousel, Quiénes Somos y Carreras
   ├─ client-*.png|svg   ← Logos de clientes (catálogo en i18n.js)
@@ -36,7 +39,8 @@ assets/                 ← ÚNICA carpeta de imágenes; todo lo que hay aquí s
   ├─ cert-iso-*.jpg     ← Badges oficiales ISO 9001 + ISO 27001
   ├─ coffee-and-job.png ← Logo del agente AI de reclutamiento
   ├─ logo-gabssa.png    ← Favicon
-  └─ logo-mark.png      ← Logo del navbar/footer (vía CSS `.logo-mark`)
+  ├─ logo-mark.png      ← Logo del navbar/footer (vía CSS `.logo-mark`)
+  └─ crevolution/       ← Cartas, logos y fuentes de la landing /crevolution
 ```
 
 ### Convenciones

@@ -1,133 +1,662 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Crevolution — Próximamente | Grupo GABSSA</title>
-<meta name="description" content="Crevolution — lo próximo de Grupo GABSSA. Muy pronto." />
-<meta name="robots" content="noindex" />
-<link rel="icon" type="image/png" href="../assets/logo-gabssa.png" />
-<link rel="stylesheet" href="../styles.css" />
-<style>
-  body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  .cr-nav {
-    position: relative;
-    z-index: 10;
-  }
-  .cr-nav-inner {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 22px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  .cr-back {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 13.5px;
-    font-family: var(--font-mono);
-    letter-spacing: 0.02em;
-    padding: 9px 14px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    transition: all .2s ease;
-  }
-  .cr-back:hover {
-    border-color: rgba(255,255,255,0.3);
-    background: rgba(255,255,255,0.06);
-    color: var(--text-primary);
-  }
-  .cr-main {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    padding: 40px 24px 100px;
-  }
-  .cr-glow {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(700px ellipse at 50% 30%, rgba(224,69,69,0.14), transparent 60%),
-      radial-gradient(600px ellipse at 80% 70%, rgba(34,211,238,0.10), transparent 60%);
-    pointer-events: none;
-  }
-  .cr-content {
-    position: relative;
-    text-align: center;
-    max-width: 720px;
-  }
-  .cr-title-stack {
-    display: grid;
-    justify-items: center;
-    margin: 22px 0 0;
-  }
-  .cr-word {
-    grid-row: 1;
-    grid-column: 1;
-    font-size: clamp(2.75rem, 9.5vw, 6.5rem);
-    font-weight: 700;
-    letter-spacing: -0.035em;
-    line-height: 1;
-    white-space: nowrap;
-    animation: cr-crossfade 6s ease-in-out infinite;
-  }
-  .cr-word-b { animation-delay: 3s; }
-  @keyframes cr-crossfade {
-    0%   { opacity: 0; filter: blur(10px); transform: translateY(14px); }
-    8%   { opacity: 1; filter: blur(0);    transform: translateY(0); }
-    42%  { opacity: 1; filter: blur(0);    transform: translateY(0); }
-    50%  { opacity: 0; filter: blur(10px); transform: translateY(-14px); }
-    100% { opacity: 0; filter: blur(10px); transform: translateY(-14px); }
-  }
-  .cr-sub {
-    margin-top: 20px;
-    font-size: 15px;
-    font-family: var(--font-mono);
-    letter-spacing: 0.05em;
-    color: var(--text-muted);
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .cr-word { animation: none; opacity: 1; filter: none; transform: none; }
-    .cr-word-b { display: none; }
-  }
-  @media (max-width: 600px) {
-    .cr-nav-inner { padding: 18px 20px; }
-    .cr-back span.cr-back-label { display: none; }
-  }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operación Jackpot · CREVOLUTION 2026 | Grupo GABSSA</title>
+<meta name="description" content="Grupo GABSSA en CREVOLUTION 2026: 5 marcas, diferentes soluciones, 1 ecosistema. YAUB, BiNatsa, NEXT HUB, IUDEX y GABSSA. ¿A qué solución le apuestas?">
+<meta property="og:title" content="Operación Jackpot · Grupo GABSSA en CREVOLUTION 2026">
+<meta property="og:description" content="5 marcas · diferentes soluciones · 1 ecosistema. Gira la ruleta y descubre tu jugada ganadora.">
+<meta property="og:image" content="https://www.gabssamexico.com/assets/crevolution/logo-grupo-gabssa.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" type="image/png" href="/assets/logo-gabssa.png">
+<link rel="preload" href="/assets/crevolution/anton-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/crevolution/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>/* vietnamese */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/anton/v27/1Ptgg87LROyAm3K8-C8CSKlvPfE.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/anton/v27/1Ptgg87LROyAm3K9-C8CSKlvPfE.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/crevolution/anton-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 900;
+  font-stretch: 100% 125%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kQo8UDI-1M0wlSfdboLmvDIaK18A.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 900;
+  font-stretch: 100% 125%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/archivo/v25/k3kQo8UDI-1M0wlSfdfoLmvDIaK18A.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 900;
+  font-stretch: 100% 125%;
+  font-display: swap;
+  src: url("/assets/crevolution/archivo-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z11lFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLDz8Z1JlFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/assets/crevolution/poppins-300-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJbecnFHGPezSQ.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/crevolution/poppins-400-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z11lFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1JlFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/crevolution/poppins-500-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z11lFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1JlFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/crevolution/poppins-600-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 </style>
+<style>
+body{margin:0;background:#0A0A0A}
+a{color:#FF3B14}a:hover{color:#FF6A4A}
+html{scroll-behavior:smooth}
+.gx{font-family:'Archivo',sans-serif;font-stretch:125%}
+.gd{font-family:'Anton','Impact',sans-serif;font-weight:400;letter-spacing:.005em}
+.gcard{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.gcard:hover{transform:translateY(-10px) rotate(-1.5deg)}
+.gbtn{transition:background .2s,color .2s,transform .2s}
+.gbtn:hover{transform:translateY(-2px)}
+.gbtn:disabled{opacity:.55;cursor:default;transform:none}
+.gmarq{display:flex;gap:48px;width:max-content;animation:gm 28s linear infinite}
+@keyframes gm{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ginput{transition:border-color .2s}
+.ginput:focus{outline:none;border-color:#FF3B14}
+@media (prefers-reduced-motion:reduce){.gmarq{animation:none}.gcard,.gbtn{transition:none}}
+</style>
+<style>[data-if]{display:contents}[data-if][hidden]{display:none}</style>
 </head>
 <body>
+<div style="background: #0A0A0A; color: #F2F0ED; font-family: 'Poppins', 'Helvetica Neue', sans-serif; min-height: 100vh; overflow: hidden; position: relative">
 
-<nav class="cr-nav">
-  <div class="cr-nav-inner">
-    <a href="../index.html" class="cr-back">
-      ← <span class="cr-back-label">Volver al sitio</span>
-    </a>
-  </div>
+<header style="position: relative; z-index: 3; border-bottom: 1px solid #1f1f1f">
+<div style="max-width: 1280px; margin: 0 auto; padding: 20px clamp(20px, 4vw, 48px); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+<a href="#inicio" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #F2F0ED">
+<img src="/assets/crevolution/logo-grupo-gabssa.png" alt="Grupo GABSSA" style="height: 40px; width: auto; display: block">
+
+</a>
+<nav aria-label="Principal" style="display: flex; gap: clamp(16px, 3vw, 36px); flex-wrap: wrap; align-items: center">
+<a href="#soluciones" class="gx" style="color: #C9C6C2; text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: .14em">SOLUCIONES</a>
+<a href="#ruleta" class="gx" style="color: #C9C6C2; text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: .14em">RULETA</a>
+<a href="#evento" class="gx" style="color: #C9C6C2; text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: .14em">CREVOLUTION</a>
+<a href="#registro" class="gbtn gx" style="background: #FF3B14; color: #0A0A0A; text-decoration: none; font-size: 12px; font-weight: 800; letter-spacing: .12em; padding: 14px 20px; border-radius: 4px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">HABLEMOS</a>
 </nav>
+</div>
+</header>
 
-<main class="cr-main">
-  <div class="cr-glow"></div>
-  <div class="cr-content">
-    <span class="eyebrow red"><span class="dot"></span>GRUPO GABSSA</span>
-    <h1 class="cr-title-stack">
-      <span class="cr-word cr-word-a grad-text">Crevolution</span>
-      <span class="cr-word cr-word-b grad-text">Próximamente</span>
-    </h1>
-    <p class="cr-sub">2026</p>
-  </div>
-</main>
+<section id="inicio" style="position: relative">
+<div style="position: absolute; right: -10%; top: -20%; width: 70%; height: 140%; background: radial-gradient(closest-side, rgba(255,59,20,.22), rgba(255,59,20,0)); pointer-events: none"></div>
+<div style="position: relative; max-width: 1280px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) clamp(20px, 4vw, 48px) 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: 32px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; align-items: center; gap: 14px">
+<span style="width: 40px; height: 3px; background: #FF3B14"></span>
+<span class="gx" style="font-size: 12px; font-weight: 700; letter-spacing: .28em; color: #C9C6C2">CREVOLUTION 2026 · 8 OCT · WTC CDMX</span>
+</div>
+<div>
+<img src="/assets/crevolution/logo-grupo-gabssa.png" alt="Grupo GABSSA" style="height: clamp(56px, 6vw, 84px); width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 0 22px">
+<h1 class="gd" style="margin: 0; font-size: clamp(64px, 9.4vw, 136px); line-height: .9; text-transform: uppercase">Operación<br><span style="color: #FF3B14">Jackpot</span></h1>
+</div>
+<p style="margin: 0; font-size: clamp(22px, 2.4vw, 32px); font-weight: 300; line-height: 1.2">¿A qué solución le apuestas?</p>
+<p class="gx" style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: .16em; color: #A8A5A1">5 MARCAS · DIFERENTES SOLUCIONES · 1 ECOSISTEMA</p>
+<div style="display: flex; gap: 14px; flex-wrap: wrap">
+<a href="#ruleta" class="gbtn gx" style="background: #FF3B14; color: #0A0A0A; text-decoration: none; font-size: 13px; font-weight: 800; letter-spacing: .14em; padding: 18px 28px; border-radius: 4px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">GIRA LA RULETA</a>
+<a href="#soluciones" class="gbtn gx" style="border: 1.5px solid #F2F0ED; color: #F2F0ED; text-decoration: none; font-size: 13px; font-weight: 700; letter-spacing: .14em; padding: 18px 28px; border-radius: 4px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">VER LAS 5 CARTAS</a>
+</div>
+</div>
+<div style="position: relative; display: flex; justify-content: center">
+<img src="/assets/crevolution/hero-cartas.webp" alt="Cartas de Grupo GABSSA: YAUB, BiNatsa, NextHub, IUDEX y GABSSA cayendo sobre la baraja" style="height: clamp(480px, 52vw, 720px); width: auto; max-width: 100%; object-fit: contain; display: block; filter: drop-shadow(0 30px 60px rgba(0,0,0,.6))">
+</div>
+</div>
+</section>
 
+<div style="max-width: 1280px; margin: 0 auto; padding: 8px clamp(20px, 4vw, 48px) 24px">
+<div style="border-top: 1px solid #242424; border-bottom: 1px solid #242424; padding: 26px 0; display: flex; align-items: center; justify-content: space-between; gap: clamp(24px, 4vw, 56px); flex-wrap: wrap">
+<span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .24em; color: #8f8c88">EL ECOSISTEMA</span>
+<a href="https://www.yaub.ai/" target="_blank" rel="noopener"><img src="/assets/crevolution/logo-yaub.png" alt="Yaub AI" style="height: 56px; width: auto; max-width: 100%; object-fit: contain; display: block"></a>
+<a href="https://www.binatsa.com/" target="_blank" rel="noopener"><img src="/assets/crevolution/logo-binatsa.png" alt="BiNatsa" style="height: 26px; width: auto; display: block"></a>
+<a href="https://next-hub.site/" target="_blank" rel="noopener"><img src="/assets/crevolution/logo-nexthub.png" alt="NextHub" style="height: 38px; width: auto; display: block"></a>
+<a href="https://iudex.mx/" target="_blank" rel="noopener"><img src="/assets/crevolution/logo-iudex.png" alt="IUDEX" style="height: 28px; width: auto; display: block"></a>
+<a href="https://www.grupogabssa.com.mx/" target="_blank" rel="noopener" class="gx" style="text-decoration: none; color: #F2F0ED; font-weight: 900; font-size: 18px; letter-spacing: .06em; line-height: 1.05"><img src="/assets/crevolution/logo-grupo-gabssa.png" alt="Grupo GABSSA" style="height: 40px; width: auto; display: block"></a>
+</div>
+</div>
+
+<div style="background: #FF3B14; color: #0A0A0A; padding: 18px 0; transform: rotate(-1.2deg); margin: 24px -20px 0; overflow: hidden">
+<div class="gmarq gd" style="font-size: 30px; line-height: 1; white-space: nowrap">
+<span>YAUB · EL AS DE LA EJECUCIÓN</span><span>◆</span><span>BINATSA · LA REINA DE LOS DATOS</span><span>◆</span><span>NEXT HUB · EL REY DE LA OPERACIÓN</span><span>◆</span><span>IUDEX · EL GUARDIÁN LEGAL</span><span>◆</span><span>GABSSA · Y SI… ADEMÁS COBRAMOS</span><span>◆</span>
+<span>YAUB · EL AS DE LA EJECUCIÓN</span><span>◆</span><span>BINATSA · LA REINA DE LOS DATOS</span><span>◆</span><span>NEXT HUB · EL REY DE LA OPERACIÓN</span><span>◆</span><span>IUDEX · EL GUARDIÁN LEGAL</span><span>◆</span><span>GABSSA · Y SI… ADEMÁS COBRAMOS</span><span>◆</span>
+</div>
+</div>
+
+<section id="soluciones" style="max-width: 1280px; margin: 0 auto; padding: clamp(72px, 9vw, 120px) clamp(20px, 4vw, 48px) 40px">
+<div style="display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 56px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span class="gx" style="font-size: 12px; font-weight: 700; letter-spacing: .28em; color: #FF3B14">01 — LAS 5 CARTAS</span>
+<h2 class="gd" style="margin: 0; font-size: clamp(44px, 6vw, 80px); line-height: .95; text-transform: uppercase">Cinco marcas.<br>Una mano ganadora.</h2>
+</div>
+<p style="margin: 0; max-width: 380px; font-size: 16px; line-height: 1.6; color: #B5B2AE">Cada marca del ecosistema es una carta con un papel distinto en tu juego. Elige la tuya o déjalo a la ruleta.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 24px">
+
+<article style="display: flex; flex-direction: column; gap: 18px">
+<div class="gcard" style="aspect-ratio: 5 / 7; border-radius: 16px; overflow: hidden; background: #141414; box-shadow: 0 20px 40px rgba(0,0,0,.45)" data-ring="0"><img src="/assets/crevolution/carta-yaub.jpg" alt="Carta YAUB, el As de la Ejecución" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="height: 44px; display: flex; align-items: center"><img src="/assets/crevolution/logo-yaub.png" alt="Yaub AI" style="height: 44px; width: auto; object-fit: contain; display: block"></div>
+<p style="margin: 0; font-size: 14px; line-height: 1.55; color: #B5B2AE">Inteligencia artificial aplicada a la ejecución: convierte la estrategia en resultados de principio a fin.</p>
+<div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap">
+<button type="button" data-pick="0" class="gbtn gx" style="align-self: flex-start; background: transparent; color: #F2F0ED; border: 1.5px solid #3a3a3a; border-radius: 4px; padding: 12px 16px; min-height: 44px; font-size: 11px; font-weight: 700; letter-spacing: .14em; cursor: pointer">APOSTAR POR YAUB</button>
+<a href="https://www.yaub.ai/" target="_blank" rel="noopener" class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .1em; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">yaub.ai ↗</a>
+</div>
+</div>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 18px">
+<div class="gcard" style="aspect-ratio: 5 / 7; border-radius: 16px; overflow: hidden; background: #141414; box-shadow: 0 20px 40px rgba(0,0,0,.45)" data-ring="1"><img src="/assets/crevolution/carta-binatsa.jpg" alt="Carta BiNatsa, la Reina de los Datos" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="height: 44px; display: flex; align-items: center"><img src="/assets/crevolution/logo-binatsa.png" alt="BiNatsa" style="height: 22px; width: auto; display: block"></div>
+<p style="margin: 0; font-size: 14px; line-height: 1.55; color: #B5B2AE">IA y transformación digital: análisis de voz, análisis de datos y automatización inteligente para decidir mejor.</p>
+<div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap">
+<button type="button" data-pick="1" class="gbtn gx" style="align-self: flex-start; background: transparent; color: #F2F0ED; border: 1.5px solid #3a3a3a; border-radius: 4px; padding: 12px 16px; min-height: 44px; font-size: 11px; font-weight: 700; letter-spacing: .14em; cursor: pointer">APOSTAR POR BINATSA</button>
+<a href="https://www.binatsa.com/" target="_blank" rel="noopener" class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .1em; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">binatsa.com ↗</a>
+</div>
+</div>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 18px">
+<div class="gcard" style="aspect-ratio: 5 / 7; border-radius: 16px; overflow: hidden; background: #141414; box-shadow: 0 20px 40px rgba(0,0,0,.45)" data-ring="2"><img src="/assets/crevolution/carta-nexthub.jpg" alt="Carta NextHub, el Rey de la Operación" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="height: 44px; display: flex; align-items: center"><img src="/assets/crevolution/logo-nexthub.png" alt="NextHub, Business &amp; Contact Centers" style="height: 32px; width: auto; display: block"></div>
+<p style="margin: 0; font-size: 14px; line-height: 1.55; color: #B5B2AE">Business &amp; contact centers que mantienen tu operación y la relación con tus clientes siempre en movimiento.</p>
+<div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap">
+<button type="button" data-pick="2" class="gbtn gx" style="align-self: flex-start; background: transparent; color: #F2F0ED; border: 1.5px solid #3a3a3a; border-radius: 4px; padding: 12px 16px; min-height: 44px; font-size: 11px; font-weight: 700; letter-spacing: .14em; cursor: pointer">APOSTAR POR NEXT HUB</button>
+<a href="https://next-hub.site/" target="_blank" rel="noopener" class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .1em; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">next-hub.site ↗</a>
+</div>
+</div>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 18px">
+<div class="gcard" style="aspect-ratio: 5 / 7; border-radius: 16px; overflow: hidden; background: #141414; box-shadow: 0 20px 40px rgba(0,0,0,.45)" data-ring="3"><img src="/assets/crevolution/carta-iudex.jpg" alt="Carta IUDEX, el Guardián Legal" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="height: 44px; display: flex; align-items: center"><img src="/assets/crevolution/logo-iudex.png" alt="IUDEX" style="height: 24px; width: auto; display: block"></div>
+<p style="margin: 0; font-size: 14px; line-height: 1.55; color: #B5B2AE">IA legal especializada en derecho mexicano: jurisprudencia, redacción con fundamento verificable y el DOF al día.</p>
+<div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap">
+<button type="button" data-pick="3" class="gbtn gx" style="align-self: flex-start; background: transparent; color: #F2F0ED; border: 1.5px solid #3a3a3a; border-radius: 4px; padding: 12px 16px; min-height: 44px; font-size: 11px; font-weight: 700; letter-spacing: .14em; cursor: pointer">APOSTAR POR IUDEX</button>
+<a href="https://iudex.mx/" target="_blank" rel="noopener" class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .1em; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">iudex.mx ↗</a>
+</div>
+</div>
+</article>
+
+<article style="display: flex; flex-direction: column; gap: 18px">
+<div class="gcard" style="aspect-ratio: 5 / 7; border-radius: 16px; overflow: hidden; background: #141414; box-shadow: 0 20px 40px rgba(0,0,0,.45)" data-ring="4"><img src="/assets/crevolution/carta-gabssa.jpg" alt="Carta GABSSA, el Comodín del Ecosistema" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="height: 44px; display: flex; align-items: center"><img src="/assets/crevolution/logo-grupo-gabssa.png" alt="Grupo GABSSA" style="height: 32px; width: auto; display: block"></div>
+<p style="margin: 0; font-size: 14px; line-height: 1.55; color: #B5B2AE"><strong style="color: #F2F0ED; font-weight: 600">Y si… además cobramos.</strong> Más de 30 años en cobranza, dictaminación en campo, contact center y servicios legales.</p>
+<div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap">
+<button type="button" data-pick="4" class="gbtn gx" style="align-self: flex-start; background: transparent; color: #F2F0ED; border: 1.5px solid #3a3a3a; border-radius: 4px; padding: 12px 16px; min-height: 44px; font-size: 11px; font-weight: 700; letter-spacing: .14em; cursor: pointer">APOSTAR POR GABSSA</button>
+<a href="https://www.grupogabssa.com.mx/" target="_blank" rel="noopener" class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .1em; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center">grupogabssa.com.mx ↗</a>
+</div>
+</div>
+</article>
+
+</div>
+</section>
+
+
+<section id="cobramos" aria-labelledby="cobramos-t" style="position: relative; margin-top: 96px; overflow: hidden; border-top: 1px solid #1f1f1f">
+<div style="position: absolute; right: -8%; top: 50%; width: 60%; aspect-ratio: 1 / 1; transform: translateY(-50%); background: radial-gradient(closest-side, rgba(255,59,20,.28), rgba(255,59,20,0)); pointer-events: none"></div>
+<div style="position: relative; max-width: 1280px; margin: 0 auto; padding: clamp(72px, 9vw, 130px) clamp(20px, 4vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); gap: clamp(40px, 6vw, 80px); align-items: center">
+<div style="display: flex; flex-direction: column; gap: 26px">
+<span class="gx" style="font-size: 12px; font-weight: 700; letter-spacing: .28em; color: #FF3B14">GABSSA · EL COMODÍN DEL ECOSISTEMA</span>
+<h2 id="cobramos-t" class="gd" style="margin: 0; line-height: .86; text-transform: uppercase">
+<span style="display: block; font-size: clamp(72px, 11vw, 168px); color: #F2F0ED">Y si…</span>
+<span style="display: block; font-size: clamp(72px, 11vw, 168px); color: #FF3B14">además</span>
+<span style="display: block; font-size: clamp(72px, 11vw, 168px); color: #FF3B14">cobramos.</span>
+</h2>
+<p style="margin: 0; max-width: 520px; font-size: 18px; line-height: 1.6; color: #C9C6C2">El comodín que cambia la partida. Más de 30 años recuperando, conectando y protegiendo a empresas en todo México.</p>
+<a href="#registro" class="gbtn gx" style="align-self: flex-start; background: #FF3B14; color: #0A0A0A; text-decoration: none; font-size: 13px; font-weight: 900; letter-spacing: .14em; padding: 18px 28px; border-radius: 4px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">JUGAR EL COMODÍN</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<div style="grid-column: span 2; border: 1.5px solid #FF3B14; border-radius: 14px; padding: 28px; background: #0F0F0F; display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap">
+<span class="gd" style="font-size: 88px; line-height: .9; color: #FF3B14">30+</span>
+<span class="gx" style="font-size: 13px; font-weight: 700; letter-spacing: .14em; color: #F2F0ED; line-height: 1.5">AÑOS TRANSFORMANDO<br>DESAFÍOS EN SOLUCIONES</span>
+</div>
+<div style="grid-column: span 2; border: 1px solid #2a2a2a; border-radius: 14px; padding: 24px; background: #0F0F0F; display: flex; flex-direction: column; gap: 8px">
+<span class="gx" style="font-size: 15px; font-weight: 800; letter-spacing: .06em">COBRANZA</span>
+<span style="font-size: 14px; line-height: 1.5; color: #A8A5A1">Preventiva, extrajudicial y judicial, con respaldo de abogados en todo México.</span>
+</div>
+<div style="border: 1px solid #2a2a2a; border-radius: 14px; padding: 24px; background: #0F0F0F; display: flex; flex-direction: column; gap: 8px">
+<span class="gx" style="font-size: 14px; font-weight: 800; letter-spacing: .06em">DICTAMINACIÓN EN CAMPO</span>
+<span style="font-size: 13px; line-height: 1.5; color: #A8A5A1">Verificación presencial con georreferencia.</span>
+</div>
+<div style="border: 1px solid #2a2a2a; border-radius: 14px; padding: 24px; background: #0F0F0F; display: flex; flex-direction: column; gap: 8px">
+<span class="gx" style="font-size: 14px; font-weight: 800; letter-spacing: .06em">CONTACT CENTER</span>
+<span style="font-size: 13px; line-height: 1.5; color: #A8A5A1">Omnicanal: llamadas, chat, email, SMS y correo postal.</span>
+</div>
+<div style="border: 1px solid #2a2a2a; border-radius: 14px; padding: 24px; background: #0F0F0F; display: flex; flex-direction: column; gap: 8px">
+<span class="gx" style="font-size: 14px; font-weight: 800; letter-spacing: .06em">SERVICIOS LEGALES</span>
+<span style="font-size: 13px; line-height: 1.5; color: #A8A5A1">Cobertura nacional para bancos y fintechs.</span>
+</div>
+<div style="border: 1px solid #2a2a2a; border-radius: 14px; padding: 24px; background: #0F0F0F; display: flex; flex-direction: column; gap: 8px">
+<span class="gx" style="font-size: 14px; font-weight: 800; letter-spacing: .06em">MARKETING DIGITAL</span>
+<span style="font-size: 13px; line-height: 1.5; color: #A8A5A1">Cobranza y comunicación por canales digitales.</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="ruleta" style="position: relative; background: #0F0F0F; border-top: 1px solid #1f1f1f; border-bottom: 1px solid #1f1f1f">
+<div style="position: absolute; left: -15%; top: 0; width: 70%; height: 100%; background: radial-gradient(closest-side, rgba(255,59,20,.18), rgba(255,59,20,0)); pointer-events: none"></div>
+<div style="position: relative; max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 110px) clamp(20px, 4vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: clamp(40px, 6vw, 80px); align-items: center">
+
+<div style="position: relative; width: 100%; max-width: 520px; margin: 0 auto; aspect-ratio: 1 / 1">
+<div style="position: absolute; inset: -2%; border-radius: 50%; background: #1a1a1a; box-shadow: 0 0 0 10px #151515, 0 0 0 12px #FF3B14, 0 0 80px rgba(255,59,20,.45), inset 0 0 40px #000"></div>
+<div id="crev-wheel" style="position: absolute; inset: 0; transform: rotate(0deg); transition: transform 4.8s cubic-bezier(.12,.72,.08,1)">
+<svg viewBox="0 0 400 400" role="img" aria-label="Ruleta con las cinco marcas de Grupo GABSSA" style="width: 100%; height: 100%; display: block">
+<circle cx="200" cy="200" r="198" fill="#0d0d0d"></circle>
+<path d="M144.99 30.71 A178 178 0 0 1 255.01 30.71 L221.63 133.43 A70 70 0 0 0 178.37 133.43 Z" fill="#FF3B14" stroke="#2a2a2a" stroke-width="1.5"></path>
+<path d="M255.01 30.71 A178 178 0 0 1 344.01 95.37 L256.63 158.86 A70 70 0 0 0 221.63 133.43 Z" fill="#111111" stroke="#2a2a2a" stroke-width="1.5"></path>
+<path d="M344.01 95.37 A178 178 0 0 1 378.00 200.00 L270.00 200.00 A70 70 0 0 0 256.63 158.86 Z" fill="#FF3B14" stroke="#2a2a2a" stroke-width="1.5"></path>
+<path d="M378.00 200.00 A178 178 0 0 1 344.01 304.63 L256.63 241.14 A70 70 0 0 0 270.00 200.00 Z" fill="#111111" stroke="#2a2a2a" stroke-width="1.5"></path>
+<path d="M344.01 304.63 A178 178 0 0 1 255.01 369.29 L221.63 266.57 A70 70 0 0 0 256.63 241.14 Z" fill="#FF3B14" stroke="#2a2a2a" stroke-width="1.5"></path>
+<path d="M255.01 369.29 A178 178 0 0 1 144.99 369.29 L178.37 266.57 A70 70 0 0 0 221.63 266.57 Z" fill="#111111" stroke="#2a2a2a" stroke-width="1.5"></path>
+<path d="M144.99 369.29 A178 178 0 0 1 55.99 304.63 L143.37 241.14 A70 70 0 0 0 178.37 266.57 Z" fill="#FF3B14" stroke="#2a2a2a" stroke-width="1.5"></path>
+<path d="M55.99 304.63 A178 178 0 0 1 22.00 200.00 L130.00 200.00 A70 70 0 0 0 143.37 241.14 Z" fill="#111111" stroke="#2a2a2a" stroke-width="1.5"></path>
+<path d="M22.00 200.00 A178 178 0 0 1 55.99 95.37 L143.37 158.86 A70 70 0 0 0 130.00 200.00 Z" fill="#FF3B14" stroke="#2a2a2a" stroke-width="1.5"></path>
+<path d="M55.99 95.37 A178 178 0 0 1 144.99 30.71 L178.37 133.43 A70 70 0 0 0 143.37 158.86 Z" fill="#111111" stroke="#2a2a2a" stroke-width="1.5"></path>
+<text x="200" y="52" transform="rotate(0 200 200)" text-anchor="middle" font-family="Archivo, sans-serif" font-stretch="125%" font-weight="800" font-size="13" fill="#0A0A0A">YAUB</text>
+<text x="200" y="72" transform="rotate(0 200 200)" text-anchor="middle" font-family="Anton, sans-serif" font-size="18" fill="#0A0A0A">A</text>
+<text x="200" y="52" transform="rotate(36 200 200)" text-anchor="middle" font-family="Archivo, sans-serif" font-stretch="125%" font-weight="800" font-size="13" fill="#F2F0ED">BiNatsa</text>
+<text x="200" y="72" transform="rotate(36 200 200)" text-anchor="middle" font-family="Anton, sans-serif" font-size="18" fill="#F2F0ED">Q</text>
+<text x="200" y="52" transform="rotate(72 200 200)" text-anchor="middle" font-family="Archivo, sans-serif" font-stretch="125%" font-weight="800" font-size="13" fill="#0A0A0A">NEXT HUB</text>
+<text x="200" y="72" transform="rotate(72 200 200)" text-anchor="middle" font-family="Anton, sans-serif" font-size="18" fill="#0A0A0A">K</text>
+<text x="200" y="52" transform="rotate(108 200 200)" text-anchor="middle" font-family="Archivo, sans-serif" font-stretch="125%" font-weight="800" font-size="13" fill="#F2F0ED">IUDEX</text>
+<text x="200" y="72" transform="rotate(108 200 200)" text-anchor="middle" font-family="Anton, sans-serif" font-size="18" fill="#F2F0ED">J</text>
+<text x="200" y="52" transform="rotate(144 200 200)" text-anchor="middle" font-family="Archivo, sans-serif" font-stretch="125%" font-weight="800" font-size="13" fill="#0A0A0A">GABSSA</text>
+<text x="200" y="72" transform="rotate(144 200 200)" text-anchor="middle" font-family="Anton, sans-serif" font-size="18" fill="#0A0A0A">G</text>
+<text x="200" y="52" transform="rotate(180 200 200)" text-anchor="middle" font-family="Archivo, sans-serif" font-stretch="125%" font-weight="800" font-size="13" fill="#F2F0ED">YAUB</text>
+<text x="200" y="72" transform="rotate(180 200 200)" text-anchor="middle" font-family="Anton, sans-serif" font-size="18" fill="#F2F0ED">A</text>
+<text x="200" y="52" transform="rotate(216 200 200)" text-anchor="middle" font-family="Archivo, sans-serif" font-stretch="125%" font-weight="800" font-size="13" fill="#0A0A0A">BiNatsa</text>
+<text x="200" y="72" transform="rotate(216 200 200)" text-anchor="middle" font-family="Anton, sans-serif" font-size="18" fill="#0A0A0A">Q</text>
+<text x="200" y="52" transform="rotate(252 200 200)" text-anchor="middle" font-family="Archivo, sans-serif" font-stretch="125%" font-weight="800" font-size="13" fill="#F2F0ED">NEXT HUB</text>
+<text x="200" y="72" transform="rotate(252 200 200)" text-anchor="middle" font-family="Anton, sans-serif" font-size="18" fill="#F2F0ED">K</text>
+<text x="200" y="52" transform="rotate(288 200 200)" text-anchor="middle" font-family="Archivo, sans-serif" font-stretch="125%" font-weight="800" font-size="13" fill="#0A0A0A">IUDEX</text>
+<text x="200" y="72" transform="rotate(288 200 200)" text-anchor="middle" font-family="Anton, sans-serif" font-size="18" fill="#0A0A0A">J</text>
+<text x="200" y="52" transform="rotate(324 200 200)" text-anchor="middle" font-family="Archivo, sans-serif" font-stretch="125%" font-weight="800" font-size="13" fill="#F2F0ED">GABSSA</text>
+<text x="200" y="72" transform="rotate(324 200 200)" text-anchor="middle" font-family="Anton, sans-serif" font-size="18" fill="#F2F0ED">G</text>
+<line x1="200.0" y1="14.0" x2="200.0" y2="6.0" stroke="#FF3B14" stroke-width="2" opacity="1"></line>
+<line x1="229.1" y1="16.3" x2="230.3" y2="8.4" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="257.5" y1="23.1" x2="259.9" y2="15.5" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="284.4" y1="34.3" x2="288.1" y2="27.1" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="309.3" y1="49.5" x2="314.0" y2="43.1" stroke="#FF3B14" stroke-width="2" opacity="1"></line>
+<line x1="331.5" y1="68.5" x2="337.2" y2="62.8" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="350.5" y1="90.7" x2="356.9" y2="86.0" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="365.7" y1="115.6" x2="372.9" y2="111.9" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="376.9" y1="142.5" x2="384.5" y2="140.1" stroke="#FF3B14" stroke-width="2" opacity="1"></line>
+<line x1="383.7" y1="170.9" x2="391.6" y2="169.7" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="386.0" y1="200.0" x2="394.0" y2="200.0" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="383.7" y1="229.1" x2="391.6" y2="230.3" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="376.9" y1="257.5" x2="384.5" y2="259.9" stroke="#FF3B14" stroke-width="2" opacity="1"></line>
+<line x1="365.7" y1="284.4" x2="372.9" y2="288.1" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="350.5" y1="309.3" x2="356.9" y2="314.0" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="331.5" y1="331.5" x2="337.2" y2="337.2" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="309.3" y1="350.5" x2="314.0" y2="356.9" stroke="#FF3B14" stroke-width="2" opacity="1"></line>
+<line x1="284.4" y1="365.7" x2="288.1" y2="372.9" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="257.5" y1="376.9" x2="259.9" y2="384.5" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="229.1" y1="383.7" x2="230.3" y2="391.6" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="200.0" y1="386.0" x2="200.0" y2="394.0" stroke="#FF3B14" stroke-width="2" opacity="1"></line>
+<line x1="170.9" y1="383.7" x2="169.7" y2="391.6" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="142.5" y1="376.9" x2="140.1" y2="384.5" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="115.6" y1="365.7" x2="111.9" y2="372.9" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="90.7" y1="350.5" x2="86.0" y2="356.9" stroke="#FF3B14" stroke-width="2" opacity="1"></line>
+<line x1="68.5" y1="331.5" x2="62.8" y2="337.2" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="49.5" y1="309.3" x2="43.1" y2="314.0" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="34.3" y1="284.4" x2="27.1" y2="288.1" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="23.1" y1="257.5" x2="15.5" y2="259.9" stroke="#FF3B14" stroke-width="2" opacity="1"></line>
+<line x1="16.3" y1="229.1" x2="8.4" y2="230.3" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="14.0" y1="200.0" x2="6.0" y2="200.0" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="16.3" y1="170.9" x2="8.4" y2="169.7" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="23.1" y1="142.5" x2="15.5" y2="140.1" stroke="#FF3B14" stroke-width="2" opacity="1"></line>
+<line x1="34.3" y1="115.6" x2="27.1" y2="111.9" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="49.5" y1="90.7" x2="43.1" y2="86.0" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="68.5" y1="68.5" x2="62.8" y2="62.8" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="90.7" y1="49.5" x2="86.0" y2="43.1" stroke="#FF3B14" stroke-width="2" opacity="1"></line>
+<line x1="115.6" y1="34.3" x2="111.9" y2="27.1" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="142.5" y1="23.1" x2="140.1" y2="15.5" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<line x1="170.9" y1="16.3" x2="169.7" y2="8.4" stroke="#FF3B14" stroke-width="1" opacity="0.5"></line>
+<circle cx="200" cy="200" r="70" fill="#0A0A0A" stroke="#FF3B14" stroke-width="3"></circle>
+<circle cx="200" cy="200" r="52" fill="#141414" stroke="#2a2a2a" stroke-width="1.5"></circle>
+<path d="M214 190a17 17 0 1 0 3 15h-17" fill="none" stroke="#F2F0ED" stroke-width="7" stroke-linecap="square"></path>
+</svg>
+</div>
+<svg viewBox="0 0 40 48" aria-hidden="true" style="position: absolute; left: 50%; top: -5%; width: 44px; margin-left: -22px; filter: drop-shadow(0 6px 10px rgba(0,0,0,.6))"><path d="M20 46L4 10a16 16 0 0 1 32 0z" fill="#FF3B14"></path><circle cx="20" cy="13" r="5" fill="#0A0A0A"></circle></svg>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 26px">
+<span class="gx" style="font-size: 12px; font-weight: 700; letter-spacing: .28em; color: #FF3B14">02 — RULETA DE LAS DECISIONES</span>
+<h2 class="gd" style="margin: 0; font-size: clamp(44px, 6vw, 80px); line-height: .95; text-transform: uppercase">Gira y descubre<br>tu jugada ganadora</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #B5B2AE; max-width: 460px">La ruleta elige la carta del ecosistema que mejor responde a tu siguiente movimiento. No es suerte. Es inteligencia.</p>
+<button type="button" id="crev-spin" class="gbtn gx" style="align-self: flex-start; background: #FF3B14; color: #0A0A0A; border: none; border-radius: 4px; padding: 20px 34px; min-height: 56px; font-size: 14px; font-weight: 900; letter-spacing: .16em; cursor: pointer">GIRAR LA RULETA</button>
+
+<div style="border: 1px solid #2a2a2a; border-radius: 14px; background: #0A0A0A; padding: 26px; min-height: 150px; box-sizing: border-box" aria-live="polite">
+<div data-if="hasResult" hidden>
+<div style="display: flex; gap: 22px; align-items: center">
+<img id="crev-res-img" src="/assets/crevolution/carta-yaub.jpg" alt="" style="flex-shrink: 0; width: 96px; height: 134px; object-fit: cover; border-radius: 10px; display: block; box-shadow: 0 12px 30px rgba(0,0,0,.5)">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .22em; color: #A8A5A1">TU CARTA</span>
+<span class="gx" style="font-size: 26px; font-weight: 900; color: #F2F0ED" id="crev-res-name"></span>
+<span class="gx" style="font-size: 12px; font-weight: 700; letter-spacing: .12em; color: #FF3B14" id="crev-res-role"></span>
+<span style="font-size: 14px; line-height: 1.5; color: #B5B2AE" id="crev-res-desc"></span>
+</div>
+</div>
+</div>
+<div data-if="noResult">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .22em; color: #A8A5A1">TU CARTA</span>
+<span class="gd" style="font-size: 34px; color: #F2F0ED; text-transform: uppercase">Las apuestas están abiertas</span>
+<span style="font-size: 14px; color: #8f8c88">Gira la ruleta o elige una carta arriba.</span>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="evento" style="max-width: 1280px; margin: 0 auto; padding: clamp(72px, 9vw, 120px) clamp(20px, 4vw, 48px)">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 48px; align-items: center; margin-bottom: 64px">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<span class="gx" style="font-size: 12px; font-weight: 700; letter-spacing: .28em; color: #FF3B14">03 — EL EVENTO</span>
+<h2 class="gd" style="margin: 0; font-size: clamp(44px, 6vw, 80px); line-height: .95; text-transform: uppercase">Crevolution<br><span style="color: #FF3B14">2026</span></h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #B5B2AE; max-width: 480px">En CREVOLUTION 2026 abrimos Operación Jackpot: una mesa de casino donde cada jugada es una solución real para tu negocio. Si no alcanzaste a pasar por el stand, la partida continúa aquí.</p>
+<div style="display: flex; gap: 36px; flex-wrap: wrap; margin-top: 8px">
+<div><div class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .2em; color: #8f8c88">FECHA</div><div class="gx" style="font-size: 20px; font-weight: 800; margin-top: 4px">8 OCT 2026</div></div>
+<div><div class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .2em; color: #8f8c88">SEDE</div><div class="gx" style="font-size: 20px; font-weight: 800; margin-top: 4px">WTC CDMX</div></div>
+<div><div class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .2em; color: #8f8c88">EXPERIENCIA</div><div class="gx" style="font-size: 20px; font-weight: 800; margin-top: 4px">OPERACIÓN JACKPOT</div></div>
+</div>
+</div>
+<div style="border-radius: 18px; border: 1px solid #2a2a2a; background: linear-gradient(160deg, #161616, #0A0A0A); padding: clamp(32px, 4vw, 56px); text-align: center; position: relative; overflow: hidden">
+<div style="position: absolute; inset: 0; background: radial-gradient(circle at 50% 110%, rgba(255,59,20,.35), rgba(255,59,20,0) 60%); pointer-events: none"></div>
+<div class="gx" style="position: relative; font-size: clamp(22px, 2.8vw, 36px); font-weight: 400; letter-spacing: .06em">LA MESA</div>
+<div class="gd" style="position: relative; font-size: clamp(76px, 10vw, 150px); line-height: .95; color: #FF3B14; text-transform: uppercase">Sigue<br>abierta</div>
+<div class="gx" style="position: relative; font-size: 13px; font-weight: 700; letter-spacing: .2em; color: #C9C6C2; margin-top: 12px">CREVOLUTION 2026 · 8 OCT · WTC CDMX</div>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px">
+<div style="border: 1px solid #242424; border-radius: 14px; padding: 28px; background: #0F0F0F; display: flex; flex-direction: column; gap: 12px">
+<svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" fill="none" stroke="#FF3B14" stroke-width="2"><circle cx="17" cy="17" r="15"></circle><circle cx="17" cy="17" r="6"></circle><path d="M17 2v6M17 26v6M2 17h6M26 17h6"></path></svg>
+<h3 class="gx" style="margin: 0; font-size: 16px; font-weight: 800; letter-spacing: .06em">RULETA DE LAS DECISIONES</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.55; color: #A8A5A1">Gira aquí o en el stand y descubre qué marca del ecosistema resuelve tu reto.</p>
+</div>
+<div style="border: 1px solid #242424; border-radius: 14px; padding: 28px; background: #0F0F0F; display: flex; flex-direction: column; gap: 12px">
+<svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" fill="none" stroke="#FF3B14" stroke-width="2"><path d="M7 4h20l-10 14z"></path><path d="M17 18v11M10 30h14"></path></svg>
+<h3 class="gx" style="margin: 0; font-size: 16px; font-weight: 800; letter-spacing: .06em">BARRA JACKPOT</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.55; color: #A8A5A1">El punto de encuentro para conversar con los especialistas de cada marca.</p>
+</div>
+<div style="border: 1px solid #242424; border-radius: 14px; padding: 28px; background: #0F0F0F; display: flex; flex-direction: column; gap: 12px">
+<svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true" fill="none" stroke="#FF3B14" stroke-width="2"><rect x="4" y="6" width="26" height="17" rx="2"></rect><path d="M12 29h10M17 23v6"></path></svg>
+<h3 class="gx" style="margin: 0; font-size: 16px; font-weight: 800; letter-spacing: .06em">JACKPOT TECH LAB</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.55; color: #A8A5A1">Demos interactivas de las soluciones en tecnología, datos y operación.</p>
+</div>
+</div>
+
+<div style="margin-top: 64px; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px">
+<div style="border: 1px solid #242424; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; align-items: center; gap: 12px"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path d="M15 3C11 9 5 12 5 17a5 5 0 0 0 9 3l-2 7h6l-2-7a5 5 0 0 0 9-3c0-5-6-8-10-14z" fill="#F2F0ED"></path></svg><span class="gx" style="font-size: 12px; font-weight: 700; letter-spacing: .12em">EFICIENCIA</span></div>
+<div style="border: 1px solid #242424; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; align-items: center; gap: 12px"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path d="M15 27S3 19 3 11a6 6 0 0 1 12-2 6 6 0 0 1 12 2c0 8-12 16-12 16z" fill="#FF3B14"></path></svg><span class="gx" style="font-size: 12px; font-weight: 700; letter-spacing: .12em">EXPERIENCIA</span></div>
+<div style="border: 1px solid #242424; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; align-items: center; gap: 12px"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path d="M15 2l10 13-10 13L5 15z" fill="#FF3B14"></path></svg><span class="gx" style="font-size: 12px; font-weight: 700; letter-spacing: .12em">TECNOLOGÍA</span></div>
+<div style="border: 1px solid #242424; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; align-items: center; gap: 12px"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" fill="#F2F0ED"><circle cx="15" cy="9" r="5.5"></circle><circle cx="8.5" cy="17" r="5.5"></circle><circle cx="21.5" cy="17" r="5.5"></circle><path d="M13.5 17h3l2 10h-7z"></path></svg><span class="gx" style="font-size: 12px; font-weight: 700; letter-spacing: .12em">INNOVACIÓN</span></div>
+</div>
+</section>
+
+<section id="registro" style="background: #FF3B14; color: #0A0A0A">
+<div style="max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 110px) clamp(20px, 4vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 48px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<span class="gx" style="font-size: 12px; font-weight: 800; letter-spacing: .28em">04 — HAGAMOS TU JUGADA</span>
+<h2 class="gd" style="margin: 0; font-size: clamp(52px, 7.5vw, 104px); line-height: .92; text-transform: uppercase">La mesa<br>sigue abierta.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; max-width: 440px; font-weight: 500">¿Nos conociste en CREVOLUTION 2026 o te quedaste con ganas de pasar por la mesa? Déjanos tus datos y armamos contigo la jugada para tu negocio.</p>
+</div>
+<div style="background: #0A0A0A; color: #F2F0ED; border-radius: 16px; padding: clamp(24px, 3vw, 40px)">
+<div data-if="notSent">
+<form id="crev-form" style="display: flex; flex-direction: column; gap: 16px">
+<label style="display: flex; flex-direction: column; gap: 8px"><span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .18em; color: #A8A5A1">NOMBRE</span><input class="ginput" type="text" name="nombre" autocomplete="name" required style="background: #141414; border: 1.5px solid #2e2e2e; border-radius: 6px; color: #F2F0ED; padding: 14px; font-size: 15px; font-family: inherit; min-height: 48px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 8px"><span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .18em; color: #A8A5A1">EMPRESA</span><input class="ginput" type="text" name="empresa" autocomplete="organization" style="background: #141414; border: 1.5px solid #2e2e2e; border-radius: 6px; color: #F2F0ED; padding: 14px; font-size: 15px; font-family: inherit; min-height: 48px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 8px"><span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .18em; color: #A8A5A1">CORREO CORPORATIVO</span><input class="ginput" type="email" name="correo" autocomplete="email" required style="background: #141414; border: 1.5px solid #2e2e2e; border-radius: 6px; color: #F2F0ED; padding: 14px; font-size: 15px; font-family: inherit; min-height: 48px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 8px"><span class="gx" style="font-size: 11px; font-weight: 700; letter-spacing: .18em; color: #A8A5A1">WHATSAPP</span><input class="ginput" type="tel" name="whatsapp" autocomplete="tel" inputmode="tel" placeholder="+52 55 0000 0000" style="background: #141414; border: 1.5px solid #2e2e2e; border-radius: 6px; color: #F2F0ED; padding: 14px; font-size: 15px; font-family: inherit; min-height: 48px; box-sizing: border-box"></label>
+<button type="submit" class="gbtn gx" style="margin-top: 6px; background: #FF3B14; color: #0A0A0A; border: none; border-radius: 4px; padding: 18px; min-height: 56px; font-size: 13px; font-weight: 900; letter-spacing: .16em; cursor: pointer">QUIERO QUE ME CONTACTEN</button>
+</form>
+</div>
+<div data-if="sent" hidden>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 20px 0">
+<span class="gd" style="font-size: 44px; line-height: 1; text-transform: uppercase; color: #FF3B14">Apuesta registrada</span>
+<span style="font-size: 16px; line-height: 1.5; color: #C9C6C2">Gracias por jugar con nosotros. Nuestro equipo te contactará muy pronto para agendar una reunión.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #1f1f1f">
+<div style="max-width: 1280px; margin: 0 auto; padding: 48px clamp(20px, 4vw, 48px); display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; align-items: flex-start">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<img src="/assets/crevolution/logo-grupo-gabssa.png" alt="Grupo GABSSA" style="height: 52px; width: auto; max-width: 100%; align-self: flex-start; object-fit: contain; display: block">
+<span class="gx" style="font-size: 11px; font-weight: 600; letter-spacing: .2em; color: #8f8c88">YAUB · BINATSA · NEXT HUB · IUDEX</span>
+<span class="gd" style="font-size: 22px; color: #FF3B14; margin-top: 8px; text-transform: uppercase">No es suerte. Es inteligencia.</span>
+<span class="gd" style="font-size: 22px; color: #F2F0ED; text-transform: uppercase">Y si… además cobramos.</span>
+</div>
+<div class="gx" style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 600; letter-spacing: .08em; color: #A8A5A1">
+<span>#CREVOLUTION2026</span><span>#GrupoGABSSA</span><span>#InnovaciónFinanciera</span><span>#TransformaciónDigital</span><span>#SolucionesEmpresariales</span>
+</div>
+</div>
+</footer>
+
+</div>
+
+<script>
+// Ruleta + cartas + formulario. Misma lógica que el diseño original (Claude Design), sin React.
+(function () {
+  var ACCENT = '#FF3B14';
+  var IMG = '/assets/crevolution/';
+  var BRANDS = [
+    { name: 'YAUB AI', role: 'EL AS DE LA EJECUCIÓN', img: IMG + 'carta-yaub.jpg', desc: 'Inteligencia artificial aplicada a la ejecución: convierte la estrategia en resultados de principio a fin.' },
+    { name: 'BiNatsa', role: 'LA REINA DE LOS DATOS', img: IMG + 'carta-binatsa.jpg', desc: 'IA y transformación digital: análisis de voz, análisis de datos y automatización inteligente para decidir mejor.' },
+    { name: 'NEXT HUB', role: 'EL REY DE LA OPERACIÓN', img: IMG + 'carta-nexthub.jpg', desc: 'Business & contact centers que mantienen tu operación y la relación con tus clientes siempre en movimiento.' },
+    { name: 'IUDEX', role: 'EL GUARDIÁN LEGAL', img: IMG + 'carta-iudex.jpg', desc: 'IA legal especializada en derecho mexicano: jurisprudencia, redacción con fundamento verificable y el DOF al día.' },
+    { name: 'GABSSA', role: 'Y SI… ADEMÁS COBRAMOS', img: IMG + 'carta-gabssa.jpg', desc: 'El comodín del ecosistema: más de 30 años en cobranza, dictaminación en campo, contact center y servicios legales.' }
+  ];
+  var state = { rot: 0, spinning: false, picked: null, sent: false };
+  var timer = null;
+  var $ = function (id) { return document.getElementById(id); };
+
+  function show(key, on) {
+    document.querySelectorAll('[data-if="' + key + '"]').forEach(function (el) { el.hidden = !on; });
+  }
+
+  function render() {
+    var res = state.picked === null ? null : BRANDS[state.picked];
+    $('crev-wheel').style.transform = 'rotate(' + state.rot + 'deg)';
+    var spin = $('crev-spin');
+    spin.disabled = state.spinning;
+    spin.textContent = state.spinning ? 'GIRANDO…' : (res ? 'GIRAR DE NUEVO' : 'GIRAR LA RULETA');
+    document.querySelectorAll('[data-ring]').forEach(function (el) {
+      el.style.boxShadow = Number(el.dataset.ring) === state.picked
+        ? '0 0 0 3px ' + ACCENT + ', 0 30px 70px rgba(255,59,20,.4)'
+        : '0 20px 40px rgba(0,0,0,.45)';
+    });
+    if (res) {
+      $('crev-res-img').src = res.img;
+      $('crev-res-img').alt = 'Carta ' + res.name;
+      $('crev-res-name').textContent = res.name;
+      $('crev-res-role').textContent = res.role;
+      $('crev-res-desc').textContent = res.desc;
+    }
+    show('hasResult', !!res);
+    show('noResult', !res);
+    show('sent', state.sent);
+    show('notSent', !state.sent);
+  }
+
+  // La ruleta tiene 10 gajos (las 5 marcas dos veces): cae en un gajo al azar y gana idx % 5.
+  function spinWheel() {
+    if (state.spinning) return;
+    var idx = Math.floor(Math.random() * 10);
+    var jitter = Math.random() * 20 - 10;
+    var base = Math.ceil(state.rot / 360) * 360;
+    state.rot = base + 360 * 6 + ((360 - idx * 36) % 360) + jitter;
+    state.spinning = true;
+    state.picked = null;
+    render();
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(function () { state.spinning = false; state.picked = idx % 5; render(); }, 4900);
+  }
+
+  $('crev-spin').addEventListener('click', spinWheel);
+  document.querySelectorAll('[data-pick]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (state.spinning) return;
+      state.picked = Number(btn.dataset.pick);
+      render();
+    });
+  });
+  // TODO(contacto): conectar al mismo envío del formulario principal (widget-chat · folio + aviso a cag@).
+  $('crev-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    state.sent = true;
+    render();
+  });
+})();
+</script>
 </body>
 </html>
