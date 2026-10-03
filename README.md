@@ -31,6 +31,8 @@ sections-end.jsx        ← Quiénes Somos + Casos + Carreras (Coffee&Job) + Con
 
 crevolution/index.html  ← /crevolution: landing «Operación Jackpot» (CREVOLUTION 2026),
                           HTML estático + JS vanilla, independiente del sitio principal
+crevolution/leads/       ← /crevolution/leads: portal con login para ver los leads web de GABSSA
+                          (CREVOLUTION + Contacto + chat). Lee web_solicitudes de Yaub con RLS.
 
 assets/                 ← ÚNICA carpeta de imágenes; todo lo que hay aquí se usa
   ├─ brand-*.png        ← Fotos del hero carousel, Quiénes Somos y Carreras
